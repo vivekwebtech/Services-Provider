@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Styled Milestone Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f9f9f9, #f1f2f4);
+      color: #333;
+    }
+
+    .timeline-section {
+      padding: 80px 5%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .timeline-badge {
+      background: #eee7fd;
+      color: #9241f8;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .timeline-header h2 {
+      font-size: 36px;
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    .highlight {
+      color: #ef32d9;
+    }
+
+    .timeline-header p {
+      color: #555;
+      font-size: 17px;
+      margin-top: 10px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(to bottom, #ae46e8, #f75590);
+      border-radius: 2.5px;
+      z-index: 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 60px 0;
+    }
+
+    .timeline-item.left .timeline-card {
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .timeline-item.right .timeline-card {
+      margin-left: auto;
+      text-align: left;
+    }
+
+    .timeline-point {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff 40%, #f15bb5 60%);
+      border: 4px solid white;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 0 8px rgba(194, 46, 225, 0.5);
+    }
+
+    .timeline-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+      width: 45%;
+    }
+
+    .timeline-card .icon {
+      font-size: 30px;
+      background: linear-gradient(45deg, #c46ff1, #ff68b8);
+      color: white;
+      padding: 10px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .timeline-card .year {
+      color: #ae46e8;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .timeline-card .subtitle {
+      color: #c46ff1;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card h4 {
+      font-size: 22px;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+
+    .timeline-card p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+      }
+
+      .timeline-card {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-point {
+        left: 20px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="timeline-section">
+    <div class="timeline-header">
+      <div class="timeline-badge"><i class="fas fa-route"></i> RioGram's Evolution</div>
+      <h2>Milestones That Define <br><span>RioGram's <span class="highlight">Success Story</span></span></h2>
+      <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram’s evolution into a global digital innovation leader.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-rocket"></i></div>
+          <div class="year">2012</div>
+          <div class="subtitle">The spark that started it all</div>
+          <h4>RioGram Foundation</h4>
+          <p>Founded with a vision to democratize digital innovation and make cutting-edge technology accessible to businesses of all sizes.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-award"></i></div>
+          <div class="year">2014</div>
+          <div class="subtitle">Setting new industry standards</div>
+          <h4>First Major Breakthrough</h4>
+          <p>Secured our first Fortune 500 client and delivered a groundbreaking e-commerce platform that revolutionized their digital presence.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+       <!-- Left -->
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <div class="year">2016</div>
+          <h4>Global Expansion</h4>
+          <p>Opened offices across three continents, establishing RioGram as a truly global digital powerhouse.</p>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-flask"></i></div>
+          <div class="year">2018</div>
+          <h4>Innovation Lab Launch</h4>
+          <p>Established our dedicated R&D division, focusing on AI, blockchain, and emerging tech.</p>
+        </div>
+      </div>
+
+      <!-- Left -->
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="year">2020</div>
+          <h4>Digital Transformation Leader</h4>
+          <p>Became the go-to partner for digital change, helping 200+ companies innovate faster.</p>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-award"></i></div>
+          <div class="year">2022</div>
+          <h4>Industry Recognition</h4>
+          <p>Earned multiple accolades from top analyst firms, industry bodies, and media.</p>
+        </div>
+      </div>
+
+ 
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="icon"><i class="fas fa-award"></i></div>
+          <div class="year">2024</div>
+          <h4>Future Ready Solutions</h4>
+          <p>Continuing to shape the digital landscape with AI-powered solutions, sustainable technology, and next-generation user experiences.</p>
+        </div>
+      </div>
+      <!-- Add more timeline-item blocks as needed -->
+    </div>
+  </section>
+</body>
+</html>

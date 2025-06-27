@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RioGram Hero</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      background: #fff;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      height: 150vh;
+      /* color: white; */
+      text-align: center;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(45, 161, 47);
+      background-size: unset;
+      animation: none;
+      /* color: #000; */
+      /* Optional: switch text to black if needed */
+
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 6px 16px;
+      padding-bottom: 6px;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      z-index: 3;
+    }
+
+
+    /* Typography */
+    .hero-heading {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      padding-top: 0px;
+    }
+
+
+
+    .sub-heading {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: -18px;
+      font-weight: 600;
+      display: block;
+      /* Added */
+    }
+
+
+    .highlight {
+      color: #ff416c;
+      font-weight: bold;
+      font-size: 96px;
+    }
+
+    .main-heading {
+      font-size: 96px;
+      font-weight: 700;
+      display: block;
+      color: #b376dd;
+      ;
+    }
+
+    .subtext {
+      font-size: 20px;
+      color: rgb(229 231 235);
+      margin: 0px 0px 48px;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #00c6ff;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #007ecc;
+    }
+
+    .btn-outline {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Tech Icons Section */
+    .tech-icons-section {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 24px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      background-color: transparent;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Animations */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero-section">
+    <div class="overlay"></div>
+
+    <!-- Moved badge -->
+    <div class="badge">⭐ Award-winning Digital Innovation at RioGram</div>
+
+    <div class="hero-content">
+      <div class="hero-heading">
+        <span class="highlight">RioGram</span><br>
+        <span class="sub-heading">Transforms Digital Dreams</span><br>
+
+        <span class="main-heading">Into Reality</span>
+      </div>
+
+      <p class="subtext">
+        A passionate team of 85+ innovators, designers, and developers at RioGram,<br>
+        dedicated to transforming bold ideas into extraordinary digital experiences that<br>
+        shape industries and inspire the future.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i> Discover RioGram's Story</a>
+        <a href="#" class="btn btn-outline"><i class="fa-solid fa-eye"></i> View Our Portfolio</a>
+      </div>
+      <div class="tech-icons-section">
+        <div class="icon-wrapper">
+          <div class="icon-box"><i class="fas fa-code"></i></div>
+          <div class="icon-box"><i class="fas fa-database"></i></div>
+          <div class="icon-box"><i class="fas fa-bolt"></i></div>
+          <div class="icon-box"><i class="fas fa-cloud"></i></div>
+          <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+          <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
