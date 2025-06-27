@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RioGram Values</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+       body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafc;
+  padding: 2rem;
+}
+
+.card-grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.badge {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ✅ Responsive Breakpoint for Mobile */
+@media (max-width: 767px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-grid-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+     </style>
+</head>
+<body>
+  <section class="card-grid-section">
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #ffb300, #ff6f00);">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3>Innovation Excellence</h3>
+      <p>At RioGram, we constantly push technological boundaries, embracing emerging technologies and creative solutions to deliver exceptional results that shape the digital future.</p>
+      <span class="badge">50+ Patents Filed</span>
+    </div>
+
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #ff5e8e, #ff3d75);">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h3>Passionate Dedication</h3>
+      <p>Our RioGram team is driven by genuine passion for creating meaningful digital experiences that solve real-world problems and make a lasting positive impact.</p>
+      <span class="badge">98% Team Satisfaction</span>
+    </div>
+
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #5a7dff, #354de8);">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Unwavering Integrity</h3>
+      <p>RioGram builds lasting relationships through transparency, ethical practices, and consistent delivery on our promises to clients, partners, and stakeholders.</p>
+      <span class="badge">Zero Security Breaches</span>
+    </div>
+
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #00e676, #00c853);">
+        <i class="fas fa-users"></i>
+      </div>
+      <h3>Collaborative Spirit</h3>
+      <p>We believe the best results emerge from true collaboration, working closely with our clients as partners to achieve shared success and mutual growth.</p>
+      <span class="badge">95% Client Retention</span>
+    </div>
+
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #b388ff, #7c4dff);">
+        <i class="fas fa-bullseye"></i>
+      </div>
+      <h3>Excellence Standard</h3>
+      <p>RioGram strives for perfection in every detail, ensuring our solutions consistently exceed expectations and set new industry benchmarks for quality.</p>
+      <span class="badge">99.9% Uptime Record</span>
+    </div>
+
+    <div class="card">
+      <div class="icon" style="background: linear-gradient(to bottom right, #00e5ff, #00bcd4);">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Visionary Leadership</h3>
+      <p>We anticipate tomorrow's opportunities today, preparing innovative solutions that help our clients stay ahead of market trends and technological shifts.</p>
+      <span class="badge">10+ Years Ahead</span>
+    </div>
+  </section>
+</body>
+</html>
