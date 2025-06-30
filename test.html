@@ -1,11 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RioGram Hero</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 150vh;
+      text-align: center;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Blurred Background Image */
+    .bg-blur-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('wp5048073-photography-girl-hd-wallpapers.jpg') center/cover no-repeat;
+      filter: blur(3px);
+      z-index: 0;
+    }
+
+    /* Floating Animation Circles */
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .animated-bg .circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 12s infinite ease-in-out;
+}
+
+/* First Circle - Violet */
+.animated-bg .circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  background: rgba(33, 7, 120, 0.15); /* #7e63f6 */
+  animation-delay: 10s;
+}
+
+/* Second Circle - Pink */
+.animated-bg .circle:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 70%;
+  background: rgba(236, 77, 144, 0.15); /* #ec4d90 */
+  animation-delay: 2s;
+}
+
+/* Third Circle - Sky Blue */
+.animated-bg .circle:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  top: 35%;
+  left: 30%;
+  background: rgba(255, 0, 0, 0.15); /* #00c6ff */
+  animation-delay: 4s;
+}
+.animated-bg .circle:nth-child(4) {
+  width: 90px;
+  height: 90px;
+  top: 75%;
+  left: 60%;
+  background: rgba(55, 0, 255, 0.15); /* #00c6ff */
+  animation-delay: 4s;
+}
+.animated-bg .circle:nth-child(5) {
+  width: 80px;
+  height: 80px;
+  top: 80%;
+  left: 30%;
+  background: rgba(0, 198, 255, 0.15); /* #00c6ff */
+  animation-delay: 10s ;
+}
+
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      z-index: 4;
+    }
+
+    /* Typography */
+    .hero-heading {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .sub-heading {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: -18px;
+      font-weight: 600;
+      display: block;
+    }
+
+    @keyframes shimmer {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: 96px;
+  background: linear-gradient(90deg, #7e63f6, #ec4d90, #7e63f6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+
+    .main-heading {
+      font-size: 96px;
+      font-weight: 700;
+      display: block;
+      color: #b376dd;
+    }
+
+    .subtext {
+      font-size: 20px;
+      color: rgb(229 231 235);
+      margin: 0px 0px 48px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-buttons {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #007ecc;
+    }
+
+    .btn-outline {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .tech-icons-section {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 24px;
+      background-color: transparent;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  </style>
 </head>
 <body>
-    <h1>Services Provider</h1>
+
+  <section class="hero-section">
+    <div class="bg-blur-image"></div>
+    <div class="animated-bg">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="overlay"></div>
+
+    <span class="badge">⭐ Award-winning Digital Innovation at RioGram</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+    
+    <div class="hero-content">
+      <div class="hero-heading">
+        <span class="highlight">RioGram</span><br>
+        <span class="sub-heading">Transforms Digital Dreams</span><br>
+        <span class="main-heading">Into Reality</span>
+      </div>
+
+      <p class="subtext">
+        A passionate team of 85+ innovators, designers, and developers at RioGram,<br>
+        dedicated to transforming bold ideas into extraordinary digital experiences that<br>
+        shape industries and inspire the future.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i> Discover RioGram's Story<i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+        <a href="#" class="btn btn-outline"><i class="fa-solid fa-eye"></i> View Our Portfolio</a>
+      </div>
+
+      <div class="tech-icons-section">
+        <div class="icon-wrapper">
+          <div class="icon-box"><i class="fas fa-code"></i></div>
+          <div class="icon-box"><i class="fas fa-database"></i></div>
+          <div class="icon-box"><i class="fas fa-bolt"></i></div>
+          <div class="icon-box"><i class="fas fa-cloud"></i></div>
+          <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+          <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
