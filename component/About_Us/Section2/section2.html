@@ -87,6 +87,24 @@
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-origin: center center;
+    }
+
+    .hero-image:hover img {
+      animation: gentleBounce 1.5s ease infinite;
+      opacity: 0.92;
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.92;
+      }
+      50% {
+        transform: scale(0.98) translateY(-5px);
+        opacity: 0.96;
+      }
     }
 
     /* Highlight Text */
@@ -116,6 +134,14 @@
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       line-height: 1.4;
+      transition: all 0.3s ease;
+    }
+
+    /* Added hover effects for badges */
+    .badge:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
     }
 
     .top-right {
@@ -138,9 +164,56 @@
       color: #111;
     }
 
+    /* Blue badge with fade-in and hover effects */
     .badge.top-right.blue {
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      padding: 24px 16px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 150px;
+      margin-top: 280px;
+      margin-right: -50px;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+    
+    /* Pink badge with bounce animation */
+    .badge.middle-left {
+      animation: bounce 2s infinite;
+      background: linear-gradient(135deg, #ec4899, #d946ef);
+      color: white;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 70px;
+      margin-top: 190px;
+      margin-left: -8px;
+    }
+    
+    /* Yellow badge with fade-in and hover effects */
+    .badge.bottom-center.yellow {
+      background: #ffffff;
+      color: #111827;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 180px;
+      margin-bottom: -20px;
+      margin-top: 190px;
+      margin-left: -190px;
+      animation: fadeIn 1.2s ease-out forwards;
     }
 
     /* Features Section */
@@ -172,66 +245,28 @@
     }
 
     @keyframes bounce {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-10px);
       }
     }
 
-    .badge.middle-left {
-      animation: bounce 2s infinite;
-      background: linear-gradient(135deg, #ec4899, #d946ef);
-      /* pink-purple gradient */
-      color: white;
-      font-weight: bold;
-      padding: 14px 18px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-      line-height: 1.6;
-      font-size: 14px;
-      width: 70px;
-      margin-top: 190px;
-      margin-left: -8px;
-    }
-    .badge.bottom-center.yellow {
-      background: #ffffff;
-      /* yellow gradient */
-      color: #111827;
-      font-weight: bold;
-      padding: 14px 18px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-      line-height: 1.6;
-      font-size: 14px;
-      width: 180px;
-      margin-bottom: -20px;
-      margin-top: 190px;
-      margin-left: -190px;
-    }
-    .badge.top-right.blue {
-      /* animation: bounce 2s infinite; */
-      background: linear-gradient(135deg, #3b82f6, #06b6d4);
-      /* blue-cyan gradient */
-      color: white;
-      font-weight: bold;
-      padding: 14px 18px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-      line-height: 1.6;
-      font-size: 14px;
-      width: 150px;
-      margin-top: 280px;
-      margin-right: -50px;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    .fade-in {
+      animation: fadeIn 1.2s ease-out forwards;
+    }
 
     /* Responsive Adjustments */
     @media (max-width: 768px) {
@@ -271,22 +306,6 @@
         flex: 1 1 100%;
       }
     }
-    @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in {
-  animation: fadeIn 1.2s ease-out forwards;
-}
-
-    
-
   </style>
 </head>
 
@@ -335,10 +354,15 @@
     </div>
     <div class="hero-image">
       <img class="fade-in" src="https://img.freepik.com/free-photo/business-people-working_1098-15745.jpg" alt="Office Work">
-<div class="badge top-right blue fade-in">☕<br><strong>25K+</strong><br>Coffee Cups</div>
-<div class="badge middle-left fade-in">💬<br><strong>24/7</strong><br>Support</div>
-<div class="badge bottom-center yellow fade-in">🏆<br><strong>35+</strong><br><span class="industry" style="color: #d4a033;">Industry Awards</span></div>
-</div>
+      <!-- Coffee Cups Badge with fade-in effect -->
+      <div class="badge top-right blue fade-in">☕<br><strong>25K+</strong><br>Coffee Cups</div>
+      
+      <!-- Support Badge with bounce animation -->
+      <div class="badge middle-left fade-in">💬<br><strong>24/7</strong><br>Support</div>
+      
+      <!-- Industry Awards Badge with fade-in effect -->
+      <div class="badge bottom-center yellow fade-in">🏆<br><strong>35+</strong><br><span class="industry" style="color: #d4a033;">Industry Awards</span></div>
+    </div>
   </section>
 </body>
 
