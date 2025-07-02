@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RioGram Hero</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -16,7 +16,6 @@
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
-      background-color: #000;
     }
 
     .hero-section {
@@ -29,6 +28,7 @@
       padding: 40px 20px;
     }
 
+    /* ✅ Background image via CSS */
     .bg-blur-image {
       position: absolute;
       top: 0;
@@ -264,6 +264,7 @@
 <body>
   <section class="hero-section">
     <div class="bg-blur-image"></div>
+
     <div class="animated-bg">
       <div class="circle"></div>
       <div class="circle"></div>
@@ -271,23 +272,38 @@
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
+
     <div class="overlay"></div>
+
     <div class="hero-content">
-      <span class="badge">⭐ Award-winning Digital Innovation at RioGram</span>
+      <span class="badge">
+        ⭐ Award-winning Digital Innovation at RioGram
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+      </span>
+
       <div class="hero-heading">
         <div class="highlight">RioGram</div>
         <div class="sub-heading">Transforms Digital Dreams</div>
         <div class="main-heading">Into Reality</div>
       </div>
+
       <p class="subtext">
         A passionate team of 85+ innovators, designers, and developers at RioGram,<br />
         dedicated to transforming bold ideas into extraordinary digital experiences that<br />
         shape industries and inspire the future.
       </p>
+
       <div class="hero-buttons">
         <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i> Discover RioGram's Story</a>
         <a href="#" class="btn btn-outline"><i class="fa-solid fa-eye"></i> View Our Portfolio</a>
       </div>
+
       <div class="icon-wrapper">
         <div class="icon-box"><i class="fas fa-code"></i></div>
         <div class="icon-box"><i class="fas fa-database"></i></div>
@@ -300,5 +316,3 @@
   </section>
 </body>
 </html>
-<!-- This is a complete HTML document for the RioGram Hero section with animated background circles, a blurred image, and styled content. -->
-<!-- The code includes responsive design, animations, and a modern layout suitable for a digital innovation company. -->

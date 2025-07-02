@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,16 +84,43 @@
       width: 100%;
       max-width: 1200px;
       margin: 60px 0;
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
+    .timeline-item.left {
+      justify-content: flex-end;
+      transform: translateX(-50px);
+    }
+
+    .timeline-item.right {
+      transform: translateX(50px);
+    }
+
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Right-aligned text for left cards */
     .timeline-item.left .timeline-card {
       margin-right: auto;
-      text-align: left;
+      text-align: right;
     }
 
+    /* Left-aligned text for right cards */
     .timeline-item.right .timeline-card {
       margin-left: auto;
       text-align: left;
+    }
+
+    /* Right-align all content in left cards */
+    .timeline-item.left .timeline-card .icon,
+    .timeline-item.left .timeline-card .year,
+    .timeline-item.left .timeline-card .subtitle,
+    .timeline-item.left .timeline-card h4,
+    .timeline-item.left .timeline-card p {
+      text-align: right;
     }
 
     .timeline-point {
@@ -108,6 +134,12 @@
       border-radius: 50%;
       z-index: 1;
       box-shadow: 0 0 8px rgba(194, 46, 225, 0.5);
+      opacity: 0;
+      transition: opacity 0.6s ease 0.3s;
+    }
+
+    .timeline-item.show .timeline-point {
+      opacity: 1;
     }
 
     .timeline-card {
@@ -116,6 +148,12 @@
       border-radius: 16px;
       box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
       width: 45%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.12);
     }
 
     .timeline-card .icon {
@@ -157,11 +195,26 @@
         flex-direction: column;
         align-items: flex-start;
         padding-left: 30px;
+        transform: translateY(20px) !important;
+      }
+
+      .timeline-item.show {
+        transform: translateY(0) !important;
       }
 
       .timeline-card {
         width: 100%;
         margin-bottom: 40px;
+        text-align: left !important;
+      }
+
+      /* Reset text alignment on mobile */
+      .timeline-item.left .timeline-card .icon,
+      .timeline-item.left .timeline-card .year,
+      .timeline-item.left .timeline-card .subtitle,
+      .timeline-item.left .timeline-card h4,
+      .timeline-item.left .timeline-card p {
+        text-align: left !important;
       }
 
       .timeline::before {
@@ -178,9 +231,9 @@
 <body>
   <section class="timeline-section">
     <div class="timeline-header">
-      <div class="timeline-badge"><i class="fas fa-route"></i> RioGram's Evolution</div>
+      <div class="timeline-badge"><i class="fa-solid fa-calendar-days"></i> RioGram's Evolution</div>
       <h2>Milestones That Define <br><span>RioGram's <span class="highlight">Success Story</span></span></h2>
-      <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram’s evolution into a global digital innovation leader.</p>
+      <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram's evolution into a global digital innovation leader.</p>
     </div>
 
     <div class="timeline">
@@ -206,57 +259,89 @@
         <div class="timeline-point"></div>
       </div>
 
-       <!-- Left -->
       <div class="timeline-item left">
         <div class="timeline-card">
           <div class="icon"><i class="fas fa-globe"></i></div>
           <div class="year">2016</div>
+          <div class="subtitle">Thinking Globally, acting Locally</div>
           <h4>Global Expansion</h4>
-          <p>Opened offices across three continents, establishing RioGram as a truly global digital powerhouse.</p>
+          <p>Opened offices across three continents, establishing RioGram as a truly global digital innovation partner with local expertise.</p>
         </div>
+        <div class="timeline-point"></div>
       </div>
 
-      <!-- Right -->
       <div class="timeline-item right">
-        <div class="timeline-card">
-          <div class="icon"><i class="fas fa-flask"></i></div>
-          <div class="year">2018</div>
-          <h4>Innovation Lab Launch</h4>
-          <p>Established our dedicated R&D division, focusing on AI, blockchain, and emerging tech.</p>
-        </div>
-      </div>
-
-      <!-- Left -->
-      <div class="timeline-item left">
         <div class="timeline-card">
           <div class="icon"><i class="fas fa-lightbulb"></i></div>
-          <div class="year">2020</div>
-          <h4>Digital Transformation Leader</h4>
-          <p>Became the go-to partner for digital change, helping 200+ companies innovate faster.</p>
+          <div class="year">2018</div>
+          <div class="subtitle">Pioneering tomorrow's solutions</div>
+          <h4>Innovation Lab Launch</h4>
+          <p>Established our dedicated R&D division, focusing on AI, blockchain, and emerging technologies to stay ahead of the curve.</p>
         </div>
+        <div class="timeline-point"></div>
       </div>
 
-      <!-- Right -->
-      <div class="timeline-item right">
-        <div class="timeline-card">
-          <div class="icon"><i class="fas fa-award"></i></div>
-          <div class="year">2022</div>
-          <h4>Industry Recognition</h4>
-          <p>Earned multiple accolades from top analyst firms, industry bodies, and media.</p>
-        </div>
-      </div>
-
- 
       <div class="timeline-item left">
         <div class="timeline-card">
-          <div class="icon"><i class="fas fa-award"></i></div>
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <div class="year">2020</div>
+          <div class="subtitle">Leading through change</div>
+          <h4>Digital Transformation Leader</h4>
+          <p>Became the go-to partner for digital transformation, helping 200+ companies navigate  the new digital landscape successfully.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="icon"><i class="fa fa-trophy"></i></div>
+          <div class="year">2022</div>
+          <div class="subtitle">Excellence recognized worldwide</div>
+          <h4>Industry Recognition</h4>
+          <p>Received multiple prestigious awards for innovation, client satisfactiion, and workplace excellence from leading industry bodies.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <!-- <div class="icon"><i class="fas fa-robot"></i></div> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
           <div class="year">2024</div>
+          <div class="subtitle">Building tomorrow, today</div>
           <h4>Future Ready Solutions</h4>
           <p>Continuing to shape the digital landscape with AI-powered solutions, sustainable technology, and next-generation user experiences.</p>
         </div>
+        <div class="timeline-point"></div>
       </div>
-      <!-- Add more timeline-item blocks as needed -->
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
 </body>
 </html>
