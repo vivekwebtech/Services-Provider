@@ -153,7 +153,7 @@
     .middle-left {
       top: 40%;
       left: -20px;
-      background: #d946ef;
+      background: linear-gradient(135deg, #ec4899, #d946ef);
     }
 
     .bottom-center {
@@ -175,10 +175,13 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
       font-size: 14px;
-      width: 150px;
+      width: 180px;
       margin-top: 280px;
       margin-right: -50px;
       animation: fadeIn 1.2s ease-out forwards;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     
     /* Pink badge with bounce animation */
@@ -189,13 +192,17 @@
       font-weight: bold;
       padding: 14px 18px;
       border-radius: 16px;
-      text-align: center;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
       font-size: 14px;
-      width: 70px;
+      width: 90px;
       margin-top: 190px;
       margin-left: -8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
     
     /* Yellow badge with fade-in and hover effects */
@@ -209,11 +216,24 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
       font-size: 14px;
-      width: 180px;
+      width: 200px;
       margin-bottom: -20px;
       margin-top: 190px;
       margin-left: -190px;
       animation: fadeIn 1.2s ease-out forwards;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-content {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .badge-icon {
+      font-size: 24px;
     }
 
     /* Features Section */
@@ -266,6 +286,15 @@
 
     .fade-in {
       animation: fadeIn 1.2s ease-out forwards;
+    }
+    .subtext1{
+      font-size: 12px;
+      display: block;
+    }
+
+    .subtext2{
+      font-size: 12px;
+      display: block;
     }
 
     /* Responsive Adjustments */
@@ -336,7 +365,9 @@
       </p>
       <div class="features">
         <div class="feature green">
-          <i class="fas fa-chart-line"></i>
+         <div style="background: linear-gradient(to right, #38ef7d, #11998e); padding: 15px; border-radius: 16px; display: inline-block;">
+  <i class="fa-solid fa-chart-line" style="color: white; font-size: 32px;height: 50px;"></i>
+</div>
           <div>
             <h4 class="growth" style="font-size: 20px;">Growth Focused</h4>
             <p class="description1" style="font-size: 16px;">Sustainable scaling strategies<br><span class="highlight1" style="font-size: 14px;">400% average client
@@ -344,8 +375,10 @@
           </div>
         </div>
         <div class="feature purple">
-          <i class="fas fa-lightbulb"></i>
-          <div>
+          <div style="background: linear-gradient(to right, #c471f5, #fa71cd); padding: 15px; border-radius: 16px; display: inline-block;">
+  <i class="fa-solid fa-bolt-lightning" style="color: white; font-size: 32px;height: 50px;"></i>
+</div>
+       <div>
             <h4 class="innovation" style="font-size: 20px;">Innovation First</h4>
             <p class="description2" style="font-size: 16px;">Cutting-edge solutions<br><span class="highlight2" style="font-size: 14px;">50+ patents filed</span></p>
           </div>
@@ -355,13 +388,32 @@
     <div class="hero-image">
       <img class="fade-in" src="https://img.freepik.com/free-photo/business-people-working_1098-15745.jpg" alt="Office Work">
       <!-- Coffee Cups Badge with fade-in effect -->
-      <div class="badge top-right blue fade-in">☕<br><strong>25K+</strong><br>Coffee Cups</div>
-      
+      <div class="badge top-right blue fade-in">
+        <span class="badge-icon"><i class="fa-solid fa-mug-hot" style="color: white;"></i>
+</span>
+        <div class="badge-content">
+          <strong>25K+</strong>
+          <span>Coffee Cups</span>
+          <span class="subtext1" style="color: #a5f3fc;">Fueling innovation daily</span>
+        </div>
+      </div>
+
       <!-- Support Badge with bounce animation -->
-      <div class="badge middle-left fade-in">💬<br><strong>24/7</strong><br>Support</div>
+      <div class="badge middle-left fade-in">
+        <i class="fa-solid fa-comments" style="font-size: 24px;"></i>
+        <strong style="font-size: 18px;">24/7</strong>
+        <span>Support</span>
+      </div>
       
       <!-- Industry Awards Badge with fade-in effect -->
-      <div class="badge bottom-center yellow fade-in">🏆<br><strong>35+</strong><br><span class="industry" style="color: #d4a033;">Industry Awards</span></div>
+      <div class="badge bottom-center yellow fade-in">
+        <i class="fa-solid fa-award badge-icon" style="color: #f1c40f;"></i>
+        <div class="badge-content">
+          <strong class="Awards" style="font-size: 24px;">35+</strong>
+          <span style="color: #080808; font-size: 16px;">Industry Awards</span>
+          <span class="subtext2" style="color: #d4a033;">Including "Best Digital Agency 2024"</span>
+        </div>
+      </div>
     </div>
   </section>
 </body>
