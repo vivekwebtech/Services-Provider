@@ -15,7 +15,7 @@
         }
         
         /* Services Section Container */
-        .services-section-container{
+        .services-section-container {
             background: #0f172a;
             color: white;
             display: flex;
@@ -223,12 +223,6 @@
             transform: translateY(-5px);
         }
 
-        .member-photo {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
         .member-info {
             padding: 20px;
         }
@@ -284,6 +278,54 @@
             color: #64748b;
             border-top: 1px solid #e2e8f0;
             padding-top: 15px;
+        }
+
+        /* Image container with camera icon and bounce effect */
+        .image-container {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .member-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .member-photo.fade-effect {
+            opacity: 0.9;
+            transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .member-photo.fade-effect:hover {
+            opacity: 0.7;
+            transform: scale(0.95);
+            animation: bounce 1s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.95);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .camera-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 16px;
+            z-index: 2;
         }
     </style>
 </head>
@@ -436,7 +478,10 @@
 
     <section class="team-members-section">
         <div class="team-member-card">
-            <img src="..\component\About_Us\Section7\pexels-arshad-sutar-1749303.jpg" alt="Sarah Johnson" class="member-photo" />
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Sarah Johnson" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
             <div class="member-info">
                 <h3>Sarah Johnson</h3>
                 <p class="title">Chief Executive Officer</p>
@@ -454,7 +499,10 @@
         </div>
 
         <div class="team-member-card">
-            <img src="https://via.placeholder.com/400x250" alt="Michael Chen" class="member-photo" />
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
             <div class="member-info">
                 <h3 class="highlighted-name">Michael Chen</h3>
                 <p class="title">Chief Technology Officer</p>
@@ -472,7 +520,31 @@
         </div>
 
         <div class="team-member-card">
-            <img src="https://via.placeholder.com/400x250" alt="Michael Chen" class="member-photo" />
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                     <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
             <div class="member-info">
                 <h3 class="highlighted-name">Michael Chen</h3>
                 <p class="title">Chief Technology Officer</p>
@@ -490,7 +562,10 @@
         </div>
 
         <div class="team-member-card">
-            <img src="https://via.placeholder.com/400x250" alt="Michael Chen" class="member-photo" />
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
             <div class="member-info">
                 <h3 class="highlighted-name">Michael Chen</h3>
                 <p class="title">Chief Technology Officer</p>
@@ -508,25 +583,10 @@
         </div>
 
         <div class="team-member-card">
-            <img src="https://via.placeholder.com/400x250" alt="Michael Chen" class="member-photo" />
-            <div class="member-info">
-                <h3 class="highlighted-name">Michael Chen</h3>
-                <p class="title">Chief Technology Officer</p>
-                <p class="bio">
-                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
-                </p>
-                <div class="expertise-label">Expertise:</div>
-                <div class="tags">
-                    <span>Cloud Architecture</span>
-                    <span>AI/ML Solutions</span>
-                    <span>DevOps Excellence</span>
-                </div>
-                <div class="footer-note">Architected systems serving 10M+ users</div>
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Emily Rodriguez" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
             </div>
-        </div>
-
-        <div class="team-member-card">
-            <img src="https://via.placeholder.com/400x250" alt="Emily Rodriguez" class="member-photo" />
             <div class="member-info">
                 <h3>Emily Rodriguez</h3>
                 <p class="title">Head of Creative Design</p>

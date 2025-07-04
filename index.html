@@ -1,69 +1,2834 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RioGram Footer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RioGram - Digital Innovation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* Global Styles */
+    * {
       margin: 0;
-      background-color: #0f172a;
-      font-family: 'Inter', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .footer {
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Section 1: Hero Section */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-bg-blur-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('..//Section1/wp5048073-photography-girl-hd-wallpapers.jpg') center/cover no-repeat;
+      filter: blur(4px);
+      z-index: 0;
+    }
+
+    .hero-animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    .hero-circle:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+      background: #8e78ed;
+      animation-delay: 0s;
+    }
+
+    .hero-circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 70%;
+      background: #af6785;
+      animation-delay: 2s;
+    }
+
+    .hero-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 35%;
+      left: 30%;
+      background: #7099a4;
+      animation-delay: 4s;
+    }
+
+    .hero-circle:nth-child(4) {
+      width: 90px;
+      height: 90px;
+      top: 75%;
+      left: 60%;
+      background: #60538c;
+      animation-delay: 6s;
+    }
+
+    .hero-circle:nth-child(5) {
+      width: 80px;
+      height: 80px;
+      top: 80%;
+      left: 30%;
+      background: #78cab8;
+      animation-delay: 8s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-30px) rotate(180deg);
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      color: #fff;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .hero-heading .hero-highlight {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% }
+      100% { background-position: 200% }
+    }
+
+    .hero-sub-heading {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .hero-main-heading {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #b376dd;
+      margin-top: 0.5rem;
+    }
+
+    .hero-subtext {
+      font-size: 1.125rem;
+      margin: 24px 0;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s ease;
+    }
+
+    .hero-btn-primary {
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
+      color: #fff;
+      border: none;
+    }
+
+    .hero-btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .hero-btn-outline {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+
+    .hero-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-icon-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .hero-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 10px;
-      background-color: #0f172a;
+      font-size: 24px;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.05);
+      transition: 0.3s;
     }
 
-    .brand {
+    .hero-icon-box:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero-highlight, .hero-main-heading {
+        font-size: 2.25rem;
+      }
+
+      .hero-sub-heading {
+        font-size: 1.5rem;
+      }
+
+      .hero-content {
+        padding: 0 20px;
+      }
+    }
+
+    /* Section 2: Journey Section */
+    .journey-section {
+      display: flex;
+      padding: 60px 5%;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #fff;
+    }
+
+    .journey-content {
+      max-width: 600px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .journey-badge-btn {
+      background: #e5e2fd;
+      color: #4b3fdb;
+      font-size: 14px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: none;
+      margin-bottom: 20px;
+      margin-top: 45px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .journey-title {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: #111827;
+    }
+
+    .journey-title > .journey-highlight {
+      color: #7c39e8;
+    }
+
+    .journey-content p {
+      margin-bottom: 15px;
+      color: #4b5563;
+      font-size: 18px;
+    }
+
+    .journey-image {
+      position: relative;
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      padding-top: 330px;
+    }
+
+    .journey-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-origin: center center;
+    }
+
+    .journey-image:hover img {
+      animation: gentleBounce 1.5s ease infinite;
+      opacity: 0.92;
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.92;
+      }
+      50% {
+        transform: scale(0.98) translateY(-5px);
+        opacity: 0.96;
+      }
+    }
+
+    .journey-growth,
+    .journey-innovation {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .journey-highlight1 {
+      color: #059669 !important;
+      font-weight: 600;
+    }
+
+    .journey-highlight2 {
+      color: #7c3aed !important;
+      font-weight: 600;
+    }
+
+    .journey-badge {
+      position: absolute;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      line-height: 1.4;
+      transition: all 0.3s ease;
+    }
+
+    .journey-badge:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .journey-top-right {
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    }
+
+    .journey-middle-left {
+      top: 40%;
+      left: -20px;
+      background: linear-gradient(135deg, #ec4899, #d946ef);
+    }
+
+    .journey-bottom-center {
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #facc15;
+      color: #111;
+    }
+
+    .journey-badge.top-right.blue {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 180px;
+      margin-top: 280px;
+      margin-right: -50px;
+      animation: fadeIn 1.2s ease-out forwards;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+    }
+    
+    .journey-badge.middle-left {
+      animation: bounce 2s infinite;
+      background: linear-gradient(135deg, #ec4899, #d946ef);
+      color: white;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 90px;
+      margin-top: 190px;
+      margin-left: -8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    
+    .journey-badge.bottom-center.yellow {
+      background: #ffffff;
+      color: #111827;
+      font-weight: bold;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+      font-size: 14px;
+      width: 200px;
+      margin-bottom: -20px;
+      margin-top: 190px;
+      margin-left: -190px;
+      animation: fadeIn 1.2s ease-out forwards;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .brand-name {
-      font-size: 28px;
+    .journey-badge-content {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .journey-badge-icon {
+      font-size: 24px;
+    }
+
+    .journey-features {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .journey-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f3f4f6;
+      flex: 1 1 200px;
+    }
+
+    .journey-feature i {
+      font-size: 24px;
+      margin-top: 5px;
+    }
+
+    .journey-feature h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .journey-fade-in {
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+    .journey-subtext1{
+      font-size: 12px;
+      display: block;
+    }
+
+    .journey-subtext2{
+      font-size: 12px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .journey-section {
+        padding: 40px 20px;
+        gap: 30px;
+      }
+
+      .journey-middle-left {
+        left: 10px;
+      }
+
+      .journey-bottom-center {
+        bottom: -15px;
+      }
+
+      .journey-title {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .journey-section {
+        padding: 30px 15px;
+      }
+
+      .journey-badge {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      .journey-badge.top-right.blue {
+        padding: 18px 12px;
+      }
+
+      .journey-feature {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Section 3: Timeline Section */
+    .timeline-section {
+      padding: 80px 5%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .timeline-badge {
+      background: #eee7fd;
+      color: #9241f8;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .timeline-header h2 {
+      font-size: 36px;
+      margin-top: 20px;
       font-weight: 700;
-      background: linear-gradient(to right, #7e63f6, #ec4d90);
+    }
+
+    .timeline-highlight {
+      color: #ef32d9;
+    }
+
+    .timeline-header p {
+      color: #555;
+      font-size: 17px;
+      margin-top: 10px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .timeline-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(to bottom, #ae46e8, #f75590);
+      border-radius: 2.5px;
+      z-index: 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 60px 0;
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.left {
+      justify-content: flex-end;
+      transform: translateX(-50px);
+    }
+
+    .timeline-item.right {
+      transform: translateX(50px);
+    }
+
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-item.left .timeline-card {
+      margin-right: auto;
+      text-align: right;
+    }
+
+    .timeline-item.right .timeline-card {
+      margin-left: auto;
+      text-align: left;
+    }
+
+    .timeline-item.left .timeline-card .timeline-icon,
+    .timeline-item.left .timeline-card .timeline-year,
+    .timeline-item.left .timeline-card .timeline-subtitle,
+    .timeline-item.left .timeline-card h4,
+    .timeline-item.left .timeline-card p {
+      text-align: right;
+    }
+
+    .timeline-point {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff 40%, #f15bb5 60%);
+      border: 4px solid white;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 0 8px rgba(194, 46, 225, 0.5);
+      opacity: 0;
+      transition: opacity 0.6s ease 0.3s;
+    }
+
+    .timeline-item.show .timeline-point {
+      opacity: 1;
+    }
+
+    .timeline-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+      width: 45%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-card .timeline-icon {
+      font-size: 30px;
+      background: linear-gradient(45deg, #c46ff1, #ff68b8);
+      color: white;
+      padding: 10px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .timeline-card .timeline-year {
+      color: #ae46e8;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .timeline-card .timeline-subtitle {
+      color: #c46ff1;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card h4 {
+      font-size: 22px;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+
+    .timeline-card p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+        transform: translateY(20px) !important;
+      }
+
+      .timeline-item.show {
+        transform: translateY(0) !important;
+      }
+
+      .timeline-card {
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: left !important;
+      }
+
+      .timeline-item.left .timeline-card .timeline-icon,
+      .timeline-item.left .timeline-card .timeline-year,
+      .timeline-item.left .timeline-card .timeline-subtitle,
+      .timeline-item.left .timeline-card h4,
+      .timeline-item.left .timeline-card p {
+        text-align: left !important;
+      }
+
+      .timeline-container::before {
+        left: 20px;
+      }
+
+      .timeline-point {
+        left: 20px;
+        transform: none;
+      }
+    }
+
+    /* Section 4: Stats Section */
+    .stats-section {
+      position: relative;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, #493ece, #bf2473);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .stats-animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .stats-circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: bounce 8s infinite ease-in-out;
+      opacity: 0.3;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      25% {
+        transform: translateY(-50px) translateX(20px);
+      }
+      50% {
+        transform: translateY(0) translateX(40px);
+      }
+      75% {
+        transform: translateY(-30px) translateX(20px);
+      }
+    }
+
+    .stats-circle:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+      background: #7e63f6;
+      animation-delay: 0s;
+      animation-duration: 10s;
+    }
+
+    .stats-circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 70%;
+      background: #ec4dd9;
+      animation-delay: 1s;
+      animation-duration: 12s;
+    }
+
+    .stats-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 35%;
+      left: 30%;
+      background: #00c6ff;
+      animation-delay: 2s;
+      animation-duration: 9s;
+    }
+
+    .stats-header h2 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .stats-header h2 span {
+      color: #b7ff69;
+    }
+
+    .stats-header p {
+      margin: 20px auto 50px;
+      max-width: 700px;
+      font-size: 18px;
+      color: #e6e6e6;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 24px;
+    }
+
+    .stats-card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px 20px;
+      width: 220px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .stats-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stats-card .stats-icon {
+      font-size: 24px;
+      background: linear-gradient(to bottom right, #00c6ff, #0072ff);
+      padding: 12px;
+      border-radius: 12px;
+      color: white;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .stats-card h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 10px 0 5px;
+    }
+
+    .stats-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .stats-card p {
+      font-size: 14px;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    @media screen and (max-width: 768px) {
+      .stats-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stats-card {
+        width: 80%;
+      }
+
+      .stats-header h2 {
+        font-size: 30px;
+      }
+    }
+
+    /* Section 5: Values Section */
+    .values-section {
+      text-align: center;
+      padding: 100px 20px 60px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .values-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 18px;
+      background: #e6efff;
+      color: #2a55e5;
+      font-weight: 600;
+      border-radius: 40px;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .values-badge i {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .values-section h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .values-section h2 span {
+      color: #2a55e5;
+      display: block;
+    }
+
+    .values-section p {
+      font-size: 18px;
+      color: #444e5e;
+      margin-top: 24px;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 768px) {
+      .values-section h2 {
+        font-size: 32px;
+      }
+
+      .values-section p {
+        font-size: 16px;
+      }
+    }
+    
+    .values-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .values-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .values-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .values-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .values-card h3 {
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .values-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .values-card-badge {
+      margin-top: 1rem;
+      display: inline-block;
+      background: #f0f0f0;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    @media (max-width: 767px) {
+      .values-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .values-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Section 6: Services Section */
+    .services-section-container {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services-section {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-badge {
+      background: #e6efff;
+      color: #2a55e5;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .services-title {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
+
+    .services-highlight-gradient {
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .sparkle-icon {
-      width: 26px;
-      height: 26px;
+    .services-description {
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .sparkle-icon svg {
+    .services-card-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 30px;
+    }
+
+    .service-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .service-description {
+      font-size: 16px;
+      color: #4b5563;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .service-blue-badge {
+      background: #e6efff;
+      color: #2a55e5;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .service-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .service-list i {
+      color: #10b981;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .services-title {
+        font-size: 32px;
+      }
+      
+      .services-description {
+        font-size: 16px;
+      }
+    }
+
+    /* Section 7: Team Section */
+    .team-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-intro-section {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .team-badge {
+      background: #e6efff;
+      color: #2a55e5;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .team-heading {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
+
+    .team-highlight-text {
+      color: #7e63f6;
+    }
+
+    .team-description {
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .team-members-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .team-member-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .member-photo {
+      width: 100%;
+      border-radius: 12px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    .camera-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 8px;
+      border-radius: 50%;
+      color: #333;
+    }
+
+    .member-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .member-info .title {
+      color: #6b7280;
+      margin-bottom: 15px;
+    }
+
+    .member-info .bio {
+      font-size: 16px;
+      color: #4b5563;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .expertise-label {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tags span {
+      background: #f3f4f6;
+      color: #4b5563;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .footer-note {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .highlighted-name {
+      color: #7e63f6;
+    }
+
+    .fade-effect {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @media (max-width: 768px) {
+      .team-heading {
+        font-size: 32px;
+      }
+      
+      .team-description {
+        font-size: 16px;
+      }
+    }
+
+    /* Section 8: Testimonial Section */
+    .testimonial-section {
+      position: relative;
+      padding: 80px 20px;
+      background: #f9fafb;
+    }
+
+    .testimonial-animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      fill: #0ea5e9; /* Tailwind sky-500 */
-      transform: rotate(10deg);
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
     }
 
-    @media (max-width: 480px) {
-      .brand-name {
-        font-size: 22px;
-      }
+    .testimonial-circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 12s infinite ease-in-out;
+      opacity: 0.1;
+    }
 
-      .sparkle-icon {
-        width: 22px;
-        height: 22px;
+    .testimonial-circle:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+      background: #8e78ed;
+      animation-delay: 0s;
+    }
+
+    .testimonial-circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 70%;
+      background: #af6785;
+      animation-delay: 2s;
+    }
+
+    .testimonial-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 35%;
+      left: 30%;
+      background: #7099a4;
+      animation-delay: 4s;
+    }
+
+    .testimonial-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-badge {
+      background: #e6efff;
+      color: #2a55e5;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-header h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-highlight {
+      color: #7e63f6;
+    }
+
+    .testimonial-slider {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .testimonial-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .client-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .client-name {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .client-title {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .client-sub {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 18px;
+    }
+
+    .testimonial-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-project {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .tag-result {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .testimonial-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .nav-button {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background: #f3f4f6;
+    }
+
+    .pagination-dots {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: #7e63f6;
+      width: 20px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-header h2 {
+        font-size: 32px;
       }
+      
+      .testimonial-text {
+        font-size: 16px;
+      }
+    }
+
+    /* Section 9: Contact Section */
+    .contact-main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .contact-section {
+      display: flex;
+      gap: 40px;
+    }
+
+    .contact-left {
+      flex: 1;
+    }
+
+    .contact-left-cards1 {
+      margin-bottom: 40px;
+    }
+
+    .contact-title {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .contact-gradient-text {
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-subtitle {
+      font-size: 18px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .contact-left-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-card .details h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .contact-card .details p {
+      font-size: 16px;
+      color: #4b5563;
+      margin-bottom: 5px;
+    }
+
+    .contact-card .details .note {
+      font-size: 14px;
+    }
+
+    .contact-right {
+      flex: 1;
+    }
+
+    .contact-form {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #4b5563;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7e63f6;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group-double {
+      display: flex;
+      gap: 20px;
+    }
+
+    .form-group-double .form-group {
+      flex: 1;
+    }
+
+    .contact-btn-primary {
+      background: linear-gradient(90deg, #7e63f6, #ec4d90);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .contact-btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 1024px) {
+      .contact-section {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-title {
+        font-size: 32px;
+      }
+      
+      .contact-subtitle {
+        font-size: 16px;
+      }
+      
+      .form-group-double {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    /* Footer Section */
+    .footer {
+      background: #f9fafb;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .brand-blink {
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #4b5563;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #7e63f6;
     }
   </style>
 </head>
 <body>
-  <footer class="footer">
-    <div class="brand">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-8 h-8 text-cyan-400 mr-4 animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg><span class="text-3xl font-bold text-white gradient-text">RioGram</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-8 h-8 text-cyan-400 ml-4 animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+  <!-- Section 1: Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg-blur-image"></div>
+
+    <div class="hero-animated-bg">
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
     </div>
-  </footer>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-badge">
+        ⭐ Award-winning Digital Innovation at RioGram
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+      </span>
+
+      <div class="hero-heading">
+        <div class="hero-highlight">RioGram</div>
+        <div class="hero-sub-heading">Transforms Digital Dreams</div>
+        <div class="hero-main-heading">Into Reality</div>
+      </div>
+
+      <p class="hero-subtext">
+        A passionate team of 85+ innovators, designers, and developers at RioGram,<br />
+        dedicated to transforming bold ideas into extraordinary digital experiences that<br />
+        shape industries and inspire the future.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="hero-btn hero-btn-primary"><i class="fa-solid fa-play"></i> Discover RioGram's Story</a>
+        <a href="#" class="hero-btn hero-btn-outline"><i class="fa-solid fa-eye"></i> View Our Portfolio</a>
+      </div>
+
+      <div class="hero-icon-wrapper">
+        <div class="hero-icon-box"><i class="fas fa-code"></i></div>
+        <div class="hero-icon-box"><i class="fas fa-database"></i></div>
+        <div class="hero-icon-box"><i class="fas fa-bolt"></i></div>
+        <div class="hero-icon-box"><i class="fas fa-cloud"></i></div>
+        <div class="hero-icon-box"><i class="fas fa-mobile-alt"></i></div>
+        <div class="hero-icon-box"><i class="fas fa-layer-group"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Journey Section -->
+  <section class="journey-section">
+    <div class="journey-content">
+      <button class="journey-badge-btn"><i class="fas fa-building"></i> The RioGram Journey</button>
+      <div class="journey-title">
+        Building Tomorrow's Digital World,<br />
+        <span class="journey-highlight">One Innovation at a Time</span>
+      </div>
+      <p>
+        Founded in 2012, RioGram began as a small team of visionary dreamers who believed that technology should enhance
+        human experiences, not complicate them. What started in a modest co-working space has evolved into a global
+        powerhouse for digital transformation.
+      </p>
+      <p>
+        Today, RioGram is a thriving community of 85+ passionate professionals spanning designers, developers,
+        strategists, and innovators...
+      </p>
+      <p>
+        From our humble beginnings to serving Fortune 500 companies across 50+ countries, RioGram's journey has been
+        fueled by curiosity, innovation...
+      </p>
+      <p>
+        At RioGram, we don't just build software—we craft experiences, solve complex challenges, and create lasting
+        value...
+      </p>
+      <div class="journey-features">
+        <div class="journey-feature green">
+         <div style="background: linear-gradient(to right, #38ef7d, #11998e); padding: 15px; border-radius: 16px; display: inline-block;">
+  <i class="fa-solid fa-chart-line" style="color: white; font-size: 32px;height: 50px;"></i>
+</div>
+          <div>
+            <h4 class="journey-growth" style="font-size: 20px;">Growth Focused</h4>
+            <p class="description1" style="font-size: 16px;">Sustainable scaling strategies<br><span class="journey-highlight1" style="font-size: 14px;">400% average client
+                growth</span></p>
+          </div>
+        </div>
+        <div class="journey-feature purple">
+          <div style="background: linear-gradient(to right, #c471f5, #fa71cd); padding: 15px; border-radius: 16px; display: inline-block;">
+  <i class="fa-solid fa-bolt-lightning" style="color: white; font-size: 32px;height: 50px;"></i>
+</div>
+       <div>
+            <h4 class="journey-innovation" style="font-size: 20px;">Innovation First</h4>
+            <p class="description2" style="font-size: 16px;">Cutting-edge solutions<br><span class="journey-highlight2" style="font-size: 14px;">50+ patents filed</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="journey-image">
+      <img class="journey-fade-in" src="https://img.freepik.com/free-photo/business-people-working_1098-15745.jpg" alt="Office Work">
+      <!-- Coffee Cups Badge with fade-in effect -->
+      <div class="journey-badge journey-top-right blue journey-fade-in">
+        <span class="journey-badge-icon"><i class="fa-solid fa-mug-hot" style="color: white;"></i>
+</span>
+        <div class="journey-badge-content">
+          <strong>25K+</strong>
+          <span>Coffee Cups</span>
+          <span class="journey-subtext1" style="color: #a5f3fc;">Fueling innovation daily</span>
+        </div>
+      </div>
+
+      <!-- Support Badge with bounce animation -->
+      <div class="journey-badge journey-middle-left journey-fade-in">
+        <i class="fa-solid fa-comments" style="font-size: 24px;"></i>
+        <strong style="font-size: 18px;">24/7</strong>
+        <span>Support</span>
+      </div>
+      
+      <!-- Industry Awards Badge with fade-in effect -->
+      <div class="journey-badge journey-bottom-center yellow journey-fade-in">
+        <i class="fa-solid fa-award journey-badge-icon" style="color: #f1c40f;"></i>
+        <div class="journey-badge-content">
+          <strong class="Awards" style="font-size: 24px;">35+</strong>
+          <span style="color: #080808; font-size: 16px;">Industry Awards</span>
+          <span class="journey-subtext2" style="color: #d4a033;">Including "Best Digital Agency 2024"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Timeline Section -->
+  <section class="timeline-section">
+    <div class="timeline-header">
+      <div class="timeline-badge"><i class="fa-solid fa-calendar-days"></i> RioGram's Evolution</div>
+      <h2>Milestones That Define <br><span>RioGram's <span class="timeline-highlight">Success Story</span></span></h2>
+      <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram's evolution into a global digital innovation leader.</p>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+          <div class="timeline-year">2012</div>
+          <div class="timeline-subtitle">The spark that started it all</div>
+          <h4>RioGram Foundation</h4>
+          <p>Founded with a vision to democratize digital innovation and make cutting-edge technology accessible to businesses of all sizes.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fas fa-award"></i></div>
+          <div class="timeline-year">2014</div>
+          <div class="timeline-subtitle">Setting new industry standards</div>
+          <h4>First Major Breakthrough</h4>
+          <p>Secured our first Fortune 500 client and delivered a groundbreaking e-commerce platform that revolutionized their digital presence.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fas fa-globe"></i></div>
+          <div class="timeline-year">2016</div>
+          <div class="timeline-subtitle">Thinking Globally, acting Locally</div>
+          <h4>Global Expansion</h4>
+          <p>Opened offices across three continents, establishing RioGram as a truly global digital innovation partner with local expertise.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="timeline-year">2018</div>
+          <div class="timeline-subtitle">Pioneering tomorrow's solutions</div>
+          <h4>Innovation Lab Launch</h4>
+          <p>Established our dedicated R&D division, focusing on AI, blockchain, and emerging technologies to stay ahead of the curve.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="timeline-year">2020</div>
+          <div class="timeline-subtitle">Leading through change</div>
+          <h4>Digital Transformation Leader</h4>
+          <p>Became the go-to partner for digital transformation, helping 200+ companies navigate  the new digital landscape successfully.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <div class="timeline-icon"><i class="fa fa-trophy"></i></div>
+          <div class="timeline-year">2022</div>
+          <div class="timeline-subtitle">Excellence recognized worldwide</div>
+          <h4>Industry Recognition</h4>
+          <p>Received multiple prestigious awards for innovation, client satisfactiion, and workplace excellence from leading industry bodies.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+          <div class="timeline-year">2024</div>
+          <div class="timeline-subtitle">Building tomorrow, today</div>
+          <h4>Future Ready Solutions</h4>
+          <p>Continuing to shape the digital landscape with AI-powered solutions, sustainable technology, and next-generation user experiences.</p>
+        </div>
+        <div class="timeline-point"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Stats Section -->
+  <section class="stats-section">
+    <div class="stats-animated-bg">
+      <div class="stats-circle"></div>
+      <div class="stats-circle"></div>
+      <div class="stats-circle"></div>
+    </div>
+    <div class="stats-header">
+      <h2>Numbers That Showcase<br><span>RioGram's Impact</span></h2>
+      <p>Our achievements reflect RioGram's unwavering dedication to excellence and client success across every project, partnership, and innovation we deliver.</p>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>750+</h3>
+        <h4>Projects Delivered</h4>
+        <p>Successful digital solutions</p>
+      </div> 
+
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-star"></i></div>
+        <h3>99.2%</h3>
+        <h4>Client Satisfaction</h4>
+        <p>Consistently exceeding expectations</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-users"></i></div>
+        <h3>85+</h3>
+        <h4>Expert Team Members</h4>
+        <p>Talented professionals worldwide</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3>12+</h3>
+        <h4>Years of Excellence</h4>
+        <p>Proven track record</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-globe"></i></div>
+        <h3>50+</h3>
+        <h4>Countries Served</h4>
+        <p>Global reach and impact</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>1M+</h3>
+        <h4>Users Impacted</h4>
+        <p>Lives touched by our solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Values Section -->
+  <section class="values-section">
+    <div class="values-badge">
+      <i class="fas fa-bullseye"></i> RioGram's Core Values
+    </div>
+    <h2>
+      Values That Drive<br><span>Everything at RioGram</span>
+    </h2>
+    <p>
+      RioGram's core values are more than principles—they're the foundation that guides every decision,
+      every interaction, and every innovative solution we create for our clients worldwide.
+    </p>
+  </section>
+  <section class="values-card-grid">
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #ffb300, #ff6f00);">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3>Innovation Excellence</h3>
+      <p>At RioGram, we constantly push technological boundaries, embracing emerging technologies and creative solutions to deliver exceptional results that shape the digital future.</p>
+      <span class="values-card-badge">50+ Patents Filed</span>
+    </div>
+
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #ff5e8e, #ff3d75);">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h3>Passionate Dedication</h3>
+      <p>Our RioGram team is driven by genuine passion for creating meaningful digital experiences that solve real-world problems and make a lasting positive impact.</p>
+      <span class="values-card-badge">98% Team Satisfaction</span>
+    </div>
+
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #5a7dff, #354de8);">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Unwavering Integrity</h3>
+      <p>RioGram builds lasting relationships through transparency, ethical practices, and consistent delivery on our promises to clients, partners, and stakeholders.</p>
+      <span class="values-card-badge">Zero Security Breaches</span>
+    </div>
+
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #00e676, #00c853);">
+        <i class="fas fa-users"></i>
+      </div>
+      <h3>Collaborative Spirit</h3>
+      <p>We believe the best results emerge from true collaboration, working closely with our clients as partners to achieve shared success and mutual growth.</p>
+      <span class="values-card-badge">95% Client Retention</span>
+    </div>
+
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #b388ff, #7c4dff);">
+        <i class="fas fa-bullseye"></i>
+      </div>
+      <h3>Excellence Standard</h3>
+      <p>RioGram strives for perfection in every detail, ensuring our solutions consistently exceed expectations and set new industry benchmarks for quality.</p>
+      <span class="values-card-badge">99.9% Uptime Record</span>
+    </div>
+
+    <div class="values-card">
+      <div class="values-card-icon" style="background: linear-gradient(to bottom right, #00e5ff, #00bcd4);">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Visionary Leadership</h3>
+      <p>We anticipate tomorrow's opportunities today, preparing innovative solutions that help our clients stay ahead of market trends and technological shifts.</p>
+      <span class="values-card-badge">10+ Years Ahead</span>
+    </div>
+  </section>
+
+  <!-- Section 6: Services Section -->
+  <div class="services-section-container">
+    <section class="services-section">
+      <button class="services-badge">
+        <i class="fas fa-briefcase"></i> RioGram Services
+      </button>
+
+      <h1 class="services-title">
+        Services That Transform<br>
+        <span class="services-highlight-gradient">Your Digital Vision</span>
+      </h1>
+
+      <p class="services-description">
+        RioGram offers comprehensive digital solutions that cover every aspect of your technology needs,<br>
+        from strategic planning to flawless implementation and ongoing support.
+      </p>
+    </section>
+
+    <section class="services-card-section">
+      <div class="service-card">
+        <div class="service-icon-box" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+          <i class="fas fa-compass"></i>
+        </div>
+        <h3 class="service-title">Digital Strategy & Consulting</h3>
+        <p class="service-description">
+          Comprehensive digital transformation strategies that align technology with your business objectives
+          and market opportunities.
+        </p>
+        <span class="service-blue-badge">200+ strategies delivered</span>
+        <ul class="service-list">
+          <li><i class="fas fa-check-circle"></i> Market Analysis & Research</li>
+          <li><i class="fas fa-check-circle"></i> Technology Roadmapping</li>
+          <li><i class="fas fa-check-circle"></i> ROI Optimization</li>
+          <li><i class="fas fa-check-circle"></i> Competitive Intelligence</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box" style="background: linear-gradient(135deg, #10b981, #22c55e);">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="service-title">Custom Software Development</h3>
+        <p class="service-description">
+          Bespoke software solutions built with cutting-edge technologies, scalable architecture, and industry
+          best practices.
+        </p>
+        <span class="service-blue-badge">500+ applications built</span>
+        <ul class="service-list">
+          <li><i class="fas fa-check-circle"></i> Web Applications</li>
+          <li><i class="fas fa-check-circle"></i> Mobile Apps (iOS/Android)</li>
+          <li><i class="fas fa-check-circle"></i> API Development</li>
+          <li><i class="fas fa-check-circle"></i> System Integration</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box" style="background: linear-gradient(135deg, #ec4899, #a855f7);">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 class="service-title">UI/UX Design Excellence</h3>
+        <p class="service-description">
+          User-centered design that combines aesthetic beauty with functional excellence for optimal user
+          experiences and engagement.
+        </p>
+        <span class="service-blue-badge">300+ designs created</span>
+        <ul class="service-list">
+          <li><i class="fas fa-check-circle"></i> User Experience Design</li>
+          <li><i class="fas fa-check-circle"></i> Interface Design</li>
+          <li><i class="fas fa-check-circle"></i> Design Systems</li>
+          <li><i class="fas fa-check-circle"></i> Prototyping & Testing</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3 class="service-title">Cloud & Infrastructure</h3>
+        <p class="service-description">
+          Scalable cloud solutions and infrastructure management that ensures reliability, security, and
+          optimal performance.
+        </p>
+         <span class="badge blue-badge">150+ cloud migrations</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Cloud Migration</li>
+                    <li><i class="fas fa-check-circle"></i> DevOps Implementation</li>
+                    <li><i class="fas fa-check-circle"></i> Security Solutions</li>
+                    <li><i class="fas fa-check-circle"></i> Performance Optimization</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="service-title">AI & Machine Learning</h3>
+                <p class="service-description">
+                    Intelligent solutions that leverage artificial intelligence and machine learning to automate
+                    processes and generate insights.
+                </p>
+                <span class="badge blue-badge">75+ AI solutions deployed</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Predictive Analytics</li>
+                    <li><i class="fas fa-check-circle"></i> Natural Language Processing</li>
+                    <li><i class="fas fa-check-circle"></i> Computer Vision</li>
+                    <li><i class="fas fa-check-circle"></i> Automation Solutions</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #ef4444, #ec4899);">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3 class="service-title">E-commerce Solutions</h3>
+                <p class="service-description">
+                    Complete e-commerce platforms that drive sales, enhance customer experience, and scale with your
+                    business growth.
+                </p>
+                <span class="badge blue-badge">100+ stores launched</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Online Store Development</li>
+                    <li><i class="fas fa-check-circle"></i> Payment Integration</li>
+                    <li><i class="fas fa-check-circle"></i> Inventory Management</li>
+                    <li><i class="fas fa-check-circle"></i> Analytics & Reporting</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-intro-section">
+        <div class="team-badge">
+            <i class="fas fa-users"></i> Meet the RioGram Team
+        </div>
+        <h2 class="team-heading">
+            The Visionaries Behind<br />
+            <span class="highlight-text">RioGram's Success</span>
+        </h2>
+
+        <p class="team-description">
+            Meet the passionate individuals who bring creativity, expertise, and innovation to every RioGram project.
+            Our diverse team combines years of experience with fresh perspectives to deliver exceptional results.
+        </p>
+    </section>
+
+    <section class="team-members-section">
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Sarah Johnson" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3>Sarah Johnson</h3>
+                <p class="title">Chief Executive Officer</p>
+                <p class="bio">
+                    With over 15 years of experience in technology leadership, Sarah drives RioGram's vision for innovation and sustainable growth in the digital landscape.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Strategic Planning</span>
+                    <span>Digital Transformation</span>
+                    <span>Team Leadership</span>
+                </div>
+                <div class="footer-note">Led 200+ successful digital transformations</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                     <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//component/About_Us/Screenshot 2025-07-03 182345.png" alt="Emily Rodriguez" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3>Emily Rodriguez</h3>
+                <p class="title">Head of Creative Design</p>
+                <p class="bio">
+                    Emily transforms complex ideas into stunning visual experiences, leading RioGram's award-winning design team with creativity and strategic insight.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>UX/UI Design</span>
+                    <span>Brand Strategy</span>
+                    <span>Design Systems</span>
+                </div>
+                <div class="footer-note">Winner of 15+ international design awards</div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <div class="animated-bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+        <div class="testimonial-header">
+            <div class="testimonial-badge">
+                <i class="fas fa-quote-left"></i> RioGram Client Stories
+            </div>
+            <h2>
+                What Our Clients <span class="highlight">Say About Us</span>
+            </h2>
+        </div>
+
+        <div class="testimonial-slider">
+            <div class="testimonial-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alexandra Smith" class="client-photo">
+                            <div>
+                                <div class="client-name">Alexandra Smith</div>
+                                <div class="client-title">CEO, <strong>TechCorp Global</strong></div>
+                                <div class="client-sub">Fortune 500 Technology Company</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <p class="testimonial-text">
+                        "RioGram transformed our entire digital ecosystem. Their innovative approach and meticulous<br/>
+                        attention to detail didn't just meet our expectations—they redefined what we thought was<br/>
+                        possible for our industry."
+                    </p>
+
+                    <div class="testimonial-tags">
+                        <span class="tag tag-project">Project: Digital Transformation</span>
+                        <span class="tag tag-result">Result: 300% engagement increase</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+                            <div>
+                                <div class="client-name">Robert Johnson</div>
+                                <div class="client-title">CTO, InnovateLabs</div>
+                                <div class="client-sub">Leading AI Reasearch Company</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <p class="testimonial-text">
+                        "The technical expertise and creative vision that RioGram brought to our AI <br/>
+                        platform was extraordinary. They delivered a solution that was not only <br/>
+                        technically superior but also beautifully designed and user-friendly."
+                    </p>
+
+                    <div class="testimonial-tags">
+                        <span class="tag tag-project">Project: AI Platform Development</span>
+                        <span class="tag tag-result">Result: 50% faster processing speeds</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+               <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+                            <div>
+                                <div class="client-name">Maria Garcia</div>
+                                <div class="client-title">Founder, StartupX</div>
+                                <div class="client-sub">Fast-Growing Fintech Company</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <p class="testimonial-text">
+                       "From initial concept to successful launch, RioGram was our trusted partner<br/>
+                        every step of the way. Their strategic insights and flawless execution were<br/>
+                         instrumental in our rapid growth and market success."
+                    </p>
+
+                    <div class="testimonial-tags">
+                        <span class="tag tag-project">Project: Fintech Plateform Launch</span>
+                        <span class="tag tag-result">Resul: $10M Funding raised post-launch
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+                            <div>
+                                <div class="client-name">DR.James Wilson</div>
+                                <div class="client-title">Director Of Digital Health</div>
+                                <div class="client-sub">Global Healthcare Network</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <p class="testimonial-text">
+                        "RioGram's healthcare platform has revolutionized how we deliver patient<br/>
+                        care. Their understanding of both technology and healthcare needs resulted<br/>
+                        in a solution that truly makes a difference in people's lives."
+                    </p>
+
+                    <div class="testimonial-tags">
+                        <span class="tag tag-project">Project: Healthcare Management System</span>
+                        <span class="tag tag-result">Result: 40% improvement in patient outcomes</span>
+                    </div>
+                </div>
+            </div>
+
+        <div class="testimonial-navigation">
+            <button class="nav-button prev-btn">&#8592;</button>
+            <div class="pagination-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+            <button class="nav-button next-btn">&#8594;</button>
+        </div>
+    </section>
+
+
+     <div class="main-container">
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-left">
+        <div class="contact-left-cards1">
+          <h1 class="title">
+            Ready to Start Your <br>
+            <span class="gradient-text">RioGram Journey?</span>
+          </h1>
+          <p class="subtitle">
+            Whether you have a groundbreaking project in mind or want to explore digital possibilities, RioGram is here to
+            help. Let's create something extraordinary together that makes a real impact on your business and industry.
+          </p>
+        </div>
+
+        <div class="contact-left-cards">
+          <div class="contact-card">
+            <div class="icon" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="details">
+              <h3>Email RioGram</h3>
+              <p>hello@riogram.com</p>
+              <span class="note" style="color: #00d4ff;">We respond within 2 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon" style="background: linear-gradient(135deg, #ff00cc, #ff5e62);">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="details">
+              <h3>Call RioGram</h3>
+              <p>+1 (555) 123-GRAM</p>
+              <span class="note" style="color: #c084fc;">Available 24/7 for urgent projects</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon" style="background: linear-gradient(135deg, #00c853, #43a047);">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="details">
+              <h3>Visit RioGram</h3>
+              <p>123 Innovation Street, Tech City, TC 12345</p>
+              <span class="note" style="color: #00e676;">Open workspace, coffee always ready</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon" style="background: linear-gradient(135deg, #ff9800, #ff5722);">
+              <i class="fas fa-headphones-alt"></i>
+            </div>
+            <div class="details">
+              <h3>24/7 Support</h3>
+              <p>support@riogram.com</p>
+              <span class="note" style="color: #ffb300;">Round-the-clock assistance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <form class="contact-form">
+          <h2 class="form-title">Start Your RioGram Project</h2>
+          <div class="form-group-double">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Doe">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Your Company Name">
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">Project Type</label>
+            <select id="projectType">
+              <option>Select a RioGram Services</option>
+              <option>Digital Strategy & Consulting</option>
+              <option>Custom Software Development</option>
+              <option>Cloud & Infrastructure</option>
+              <option>UI/UX Design Excellence</option>
+              <option>AI & Machine Learning</option>
+              <option>E-commerce Solution</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projectbudget">Project Budget</label>
+            <select id="projectbudget">
+              <option>Select budget range</option>
+              <option>$10K-$25K</option>
+              <option>$25K-$50K</option>
+              <option>$50K-$100K</option>
+              <option>$100K+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" rows="8" required placeholder="Describe your project goals, challenges, and how RioGram can help bring your vision to life..."></textarea>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i>Launch Your RioGram Project</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+ <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <span class="brand">
+      <!-- Left Sparkle Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+
+      <!-- Brand Name -->
+<span class="brand-blink">RioGram</span>
+
+
+      <!-- Right Sparkle Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+    </span>
+
+    <p class="copyright">
+      © 2024 RioGram. Crafted with passion, precision, and endless creativity.
+    </p>
+    <p class="tagline">
+      Transforming ideas into digital reality, one innovation at a time.
+    </p>
+
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Careers</a>
+      <a href="#">Blog</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/DrawSVGPlugin.min.js"></script>
+
+
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('.testimonial-wrapper');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    // Show specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        goToSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        goToSlide(currentIndex);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.getAttribute('data-index'));
+            goToSlide(slideIndex);
+            resetAutoSlide();
+        });
+    });
+
+    const slider = document.querySelector('.testimonial-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
+
+    // Initial setup
+    goToSlide(currentIndex);
+    startAutoSlide();
+});
+</script>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
 </body>
-</html>
+</html> 
