@@ -29,7 +29,7 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 72px;
   color: white;
 }
 
@@ -74,6 +74,12 @@ body {
 .btn-outline {
   border: 2px solid white;
   color: white;
+}
+
+.btn-primary:hover {
+   background-color: blue;
+  color: blue;
+  
 }
 .btn-outline:hover {
   background-color: white;
