@@ -4,45 +4,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>RioGram</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <!-- <link rel="stylesheet" href="contact.css" /> -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-     html {
-    scroll-behavior: smooth;
-  }
+    /* === GLOBAL STYLES === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --primary: #3b28cc;
-    --highlight: #ff6b6b;
-    --bg-light: #f9f9f9;
-    --text-dark: #1a1a1a;
-    --gray: #777;
-    --border-radius: 8px;
-  }
+    :root {
+      --primary: #3b28cc;
+      --highlight: #ff6b6b;
+      --bg-light: #f9f9f9;
+      --text-dark: #1a1a1a;
+      --gray: #777;
+      --border-radius: 8px;
+    }
 
-  .header {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 70px;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    /* === HEADER & NAVIGATION === */
+    .header {
       position: fixed;
       top: 0;
       width: 100%;
       background: #fff;
       z-index: 1002;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      padding-bottom: 10px;
     }
 
     .nav {
+      position: relative;
       height: 60px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
+      justify-content: flex-end;
+      padding: 10px 20px;
     }
 
     .logo1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       font-weight: bold;
       font-size: 20px;
       color: #5041BC;
@@ -50,24 +61,29 @@
       z-index: 1003;
     }
 
+    /* === MOBILE MENU STYLES === */
     .menu {
-      display: none;
-      flex-direction: column;
-      background-color: #fff;
       position: fixed;
       top: 0;
       right: -300px;
-      width: 250px;
       height: 100vh;
+      width: 250px;
+      background-color: #fff;
+      flex-direction: column;
       padding-top: 80px;
+      padding-right: 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
       gap: 5px;
-      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
       transition: right 0.3s ease;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
       z-index: 1001;
+      display: flex;
+      margin-right: 20px;
     }
 
     .menu.show {
-      right: 0;
+      right: -20px;
     }
 
     .icon {
@@ -76,8 +92,11 @@
       color: #5041BC;
       background: none;
       border: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1003;
       cursor: pointer;
-      z-index: 1004;
     }
 
     #overlay {
@@ -89,23 +108,29 @@
       width: 100vw;
       background: rgba(0, 0, 0, 0.3);
       z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
-    #overlay.show {
-      display: block;
-      opacity: 1;
-    }
-
+    /* === NAVIGATION LINKS === */
     .nav a {
       color: #5041BC;
       text-decoration: none;
       padding: 10px 15px;
       display: block;
+      transition: background 0.2s;
       border-radius: 4px;
     }
 
+    .menu a,
+    .dropdown {
+      width: 100%;
+    }
+
+    .nav_1 {
+      color: rgb(0, 255, 21);
+      margin-right: 30px;
+    }
+
+    /* === DROPDOWN MENUS === */
     .dropdown {
       position: relative;
     }
@@ -115,11 +140,9 @@
       flex-direction: column;
       background: #fff;
       min-width: 200px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 999;
+      width: 100%;
+      box-shadow: none;
+      border-left: 2px solid #eee;
     }
 
     .dropdown-content a {
@@ -137,18 +160,33 @@
       display: flex;
     }
 
-    /* Show menu as flex row on large screens */
+    /* === MAIN CONTENT === */
+
+    /* === DESKTOP STYLES === */
     @media screen and (min-width: 768px) {
+      .dropdown:hover>.dropdown-content {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .dropdown .dropdown:hover>.dropdown-content {
+        left: 100%;
+        top: 0;
+        margin-left: 2px;
+      }
+
       .menu {
-        display: flex !important;
         position: static;
+        display: flex !important;
         flex-direction: row;
         height: auto;
         width: auto;
         box-shadow: none;
         padding: 0;
-        gap: 20px;
-        align-items: center;
+        /* gap: 10px; */
       }
 
       .icon {
@@ -159,35 +197,25 @@
         display: none !important;
       }
 
-      .dropdown:hover > .dropdown-content {
-        display: flex;
+      .logo1 {
+        position: static;
+        transform: none;
+        margin-left: 0;
       }
 
-      .dropdown .dropdown:hover > .dropdown-content {
-        left: 100%;
-        top: 0;
+      .nav {
+        justify-content: space-between;
       }
     }
 
-    /* Body fix */
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #fff;
-      color: var(--text-dark);
-      line-height: 1.6;
-      padding-top: 60px; /* Adjust for fixed header */
-    }
-
-    /* Hero Section */
     .hero {
-      background: #2f2a8c;
-      padding: 100px 20px;
+      background: linear-gradient(to right, #3b28cc, #011a93);
+      padding: 140px 40px;
       text-align: center;
     }
 
     .hero-content h1 {
-      font-size: 2.5rem;
+      font-size: 72px;
       color: white;
       margin-top: 0;
       line-height: 1.2;
@@ -199,9 +227,9 @@
 
     .hero-description {
       color: white;
-      font-size: 1.1rem;
+      font-size: 18px;
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 15px auto 30px;
     }
 
     .hero-buttons {
@@ -261,7 +289,7 @@
     .down-arrow {
       margin-top: 20px;
       font-size: 24px;
-      color: white;
+      color: #fff;
     }
 
     @media (max-width: 768px) {
@@ -278,24 +306,21 @@
       .down-arrow-link {
         margin-top: 30px;
       }
-      
+
       .hero {
         padding: 80px 20px;
         width: 100%
       }
-      
+
       .hero-content h1 {
         font-size: 2rem;
       }
-      
+
       .hero-description {
         font-size: 1rem;
       }
     }
-    
 
-
-    /* Down Arrow Animation for All Devices */
     .down-arrow {
       margin-top: 40px;
       font-size: 28px;
@@ -324,20 +349,8 @@
       font-size: 32px;
     }
 
-    @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
 
 
-    /* Contact Section */
     .contact-section {
       padding: 60px 20px;
       background-color: #fff;
@@ -345,12 +358,14 @@
 
     .connect {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 100px;
+      margin-top: 50px;
     }
 
     .ready {
       font-size: 1.8rem;
       margin-bottom: 15px;
+      font-size: 48px;
     }
 
     .subtext1,
@@ -620,7 +635,7 @@
       max-width: 900px;
       margin: 40px auto;
       flex-wrap: wrap;
-      
+
     }
 
     .stat-item {
@@ -637,7 +652,6 @@
       color: var(--gray);
     }
 
-    /* FAQ Section */
     .faq-section {
       padding: 60px 20px;
       background: #f0f2f5;
@@ -693,7 +707,6 @@
       display: block;
     }
 
-    /* Footer */
     .footer-container {
       background: #111827;
       padding: 40px 20px;
@@ -720,7 +733,7 @@
     }
 
     .btn.primary {
-      background-color: var(--primary);
+      background-color: blue;
       color: white;
     }
 
@@ -729,9 +742,10 @@
       color: var(--primary);
       background: white;
     }
+
     .btn.secondary:hover {
-     
-      color:  white;
+
+      color: white;
       background: var(--primary);
     }
 
@@ -740,19 +754,18 @@
       font-size: 14px;
       color: var(--gray);
     }
+
     .quesstion2 {
       font-size: 2rem;
       color: white;
       margin-bottom: 15px;
     }
-    .btn.primary:hover{
+
+    .btn.primary:hover {
       background-color: white;
-      color:  var(--primary);
+      color: blue;
     }
 
-
-
-    /* Responsive */
     @media (max-width: 768px) {
       .contact-container {
         flex-direction: column;
@@ -762,7 +775,7 @@
         flex-direction: column;
         gap: 15px;
       }
-      
+
 
       .buttons {
         flex-direction: column;
@@ -773,29 +786,34 @@
         min-width: 120px;
         padding: 15px;
       }
-      .stats{
-       margin-left: 40px;
+
+      .stats {
+        margin-left: 40px;
       }
-      .contact-section{
+
+      .contact-section {
         margin-left: 13px;
       }
-      .faq-section{
+
+      .faq-section {
         margin-left: 35px;
       }
-      .footer-container{
+
+      .footer-container {
         margin-right: -41px;
         margin-top: 20px;
       }
 
-      .faq-title, .question2 {
+      .faq-title,
+      .question2 {
         font-size: 1.8rem;
       }
-      
+
       .contact-card {
         padding: 15px;
         gap: 10px;
       }
-      
+
       .icon-box {
         padding: 10px;
       }
@@ -844,35 +862,41 @@
         justify-content: space-between;
       }
     }
-    
+
     @media (max-width: 480px) {
       .hero-content h1 {
         font-size: 1.8rem;
       }
-      
-      .ready, .quesstion2 {
+
+      .ready,
+      .quesstion2 {
         font-size: 1.5rem;
       }
-      
+
       .stat-item {
         width: 100%;
       }
-      .stats{
-       margin-left: 40px;
+
+      .stats {
+        margin-left: 32px;
+        height: 350px;
+        width: 350px;
       }
-      .contact-section{
+
+      .contact-section {
         margin-right: 13px;
       }
-      .faq-section{
-        margin-left: 35px;
+
+      .faq-section {
+        margin-right: 32px;
+
       }
-      .footer-container{
-        margin-right: -41px;
+
+      .footer-container {
+        margin-right: 0px;
         margin-top: 20px;
       }
 
-
-      
       .btn {
         text-align: center;
       }
@@ -880,23 +904,23 @@
   </style>
 </head>
 
-
 <body>
-   <header class="header">
+  <!-- HEADER SECTION -->
+  <header class="header">
     <nav class="nav">
-      <a href="../Services Provider/Service_Provider/header/header.html" class="logo1">RioGram</a>
+      <a href="#" class="logo1">RioGram</a>
 
       <!-- MOBILE MENU -->
-      <div class="menu" id="menu">
+      <div class="menu" id="menuItems">
         <!-- SERVICES DROPDOWN -->
         <div class="dropdown">
-          <a href="#" class="nav_1">Services <i class="fas fa-chevron-down"></i></a>
+          <a href="#" class="nav_1">Services &#9662;</a>
           <div class="dropdown-content">
             <a href="../component/Paid_Promotion/paid.html">Paid Promotion</a>
 
             <!-- FREE PRODUCT SUITS -->
             <div class="dropdown">
-              <a href="#">Free Product Suits <i class="fas fa-chevron-right"></i></a>
+              <a href="#">Free Product Suits &#9656;</a>
               <div class="dropdown-content">
                 <a href="../component/Free_Product_Suits/free.html">Free Demo</a>
                 <a href="../component/Free_Product_Suits/trial.html">Trial Subscriptions</a>
@@ -906,7 +930,7 @@
 
             <!-- GROWTH PRODUCT SUITS -->
             <div class="dropdown">
-              <a href="#">Growth Product Suits <i class="fas fa-chevron-right"></i></a>
+              <a href="#">Growth Product Suits &#9656;</a>
               <div class="dropdown-content">
                 <a href="../component/Growth_Product_Suits/free.html">Free Demo</a>
                 <a href="../component/Growth_Product_Suits/trial.html">Trial Subscriptions</a>
@@ -917,7 +941,7 @@
 
             <!-- BOOST PRODUCT SUITS -->
             <div class="dropdown">
-              <a href="#">Boost Product Suits <i class="fas fa-chevron-right"></i></a>
+              <a href="#">Boost Product Suits &#9656;</a>
               <div class="dropdown-content">
                 <a href="../component/Boost_Product_Suits/free.html">Free Demo</a>
                 <a href="../component/Boost_Product_Suits/trial.html">Trial Subscriptions</a>
@@ -931,20 +955,19 @@
           </div>
         </div>
 
-        <a href="../About_Us/about.html">About Us</a>
-        <a href="../Contact_Us/contact.html">Contact Us</a>
+        <a href="../component/About_Us/about.html">About Us</a>
+        <a href="../component/Contact_Us/contact.html">Contact Us</a>
       </div>
 
       <!-- MOBILE MENU TOGGLE -->
-      <button class="icon" onclick="toggleMenu()" id="menuToggle">
-        <i class="fas fa-bars" id="menuIcon"></i>
+      <button class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars" id="menuIcon"></i>
       </button>
     </nav>
   </header>
 
   <!-- OVERLAY FOR MOBILE MENU -->
-  <div id="overlay" onclick="toggleMenu()"></div>
-  <!-- Hero Section -->
+  <div id="overlay"></div>
   <section class="hero">
     <div class="hero-content">
       <h1>Let's Start a <span class="highlight">Conversation</span></h1>
@@ -957,14 +980,13 @@
       </div>
 
       <div class="down-arrow">
-        <a href="#contact-container" class="down-arrow-link"><i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#contact-container" class="down-arrow-link"><i class="fa fa-arrow-down"></i></a>
       </div>
 
 
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact-section">
     <div class="connect">
       <h2 class="ready">Ready to Connect?</h2>
@@ -1075,14 +1097,13 @@
       </div>
   </section>
 
-  <!-- Stats -->
   <section class="stats">
     <div class="stat-item">&lt; 2hrs<br /><span class="stat">Avg. Response Time</span></div>
     <div class="stat-item">98%<br /><span class="stat">Customer Satisfaction</span></div>
     <div class="stat-item">24/7<br /><span class="stat">Email & Support</span></div>
   </section>
 
-  <!-- FAQ Section -->
+
   <section class="faq-section">
     <h2 class="faq-title">Frequently Asked Questions</h2>
     <h4 class="faq-subtitle">Quick answers to common questions about getting in touch with us.</h4>
@@ -1111,13 +1132,10 @@
         form, or call our support line for immediate assistance.</div>
     </div>
   </section>
-  
 
-  <!-- Footer Section -->
-   
   <div class="footer-container">
     <section class="contact-section1">
-      <h2 class="quesstion2">Still Have Questions?</h2>
+      <h2 class="quesstion2">Still Have Questions ?</h2>
       <p class="paragraph1">Don't hesitate to reach out. Our team is standing by to help you succeed.</p>
       <div class="buttons">
         <a href="mailto:support@yourcompany.com" class="btn primary">Email Us</a>
@@ -1131,66 +1149,30 @@
     </footer>
   </div>
 
+
   <script>
-    // Enhanced menu toggle function with smooth animation
+    // TOGGLE MOBILE MENU FUNCTION
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const overlay = document.getElementById('overlay');
-      const menuIcon = document.getElementById('menuIcon');
-      const body = document.body;
-      
-      // Toggle menu and overlay
-      menu.classList.toggle('show');
-      overlay.classList.toggle('show');
-      
-      // Change icon based on menu state
-      if (menu.classList.contains('show')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-        body.style.overflow = 'hidden';
+      const menu = document.getElementById("menuItems");
+      const icon = document.getElementById("menuIcon");
+      const overlay = document.getElementById("overlay");
+
+      menu.classList.toggle("show");
+
+      if (menu.classList.contains("show")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+        overlay.style.display = "block";
       } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-        body.style.overflow = 'auto';
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+        overlay.style.display = "none";
       }
     }
 
-    // FAQ functionality
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const currentItem = btn.parentElement;
-        document.querySelectorAll('.faq-item').forEach(item => {
-          if (item !== currentItem) {
-            item.classList.remove('active');
-          }
-        });
-        currentItem.classList.toggle('active');
-      });
-    });
-
-    // Handle dropdown menus for mobile
- // TOGGLE MOBILE MENU FUNCTION
-    // function toggleMenu() {
-    //   const menu = document.getElementById("menuItems");
-    //   const icon = document.getElementById("menuIcon");
-    //   const overlay = document.getElementById("overlay");
-
-    //   menu.classList.toggle("show");
-
-    //   if (menu.classList.contains("show")) {
-    //     icon.classList.remove("fa-bars");
-    //     icon.classList.add("fa-times");
-    //     overlay.style.display = "block";
-    //   } else {
-    //     icon.classList.remove("fa-times");
-    //     icon.classList.add("fa-bars");
-    //     overlay.style.display = "none";
-    //   }
-    // }
-
     // CLOSE MENU WHEN CLICKING OVERLAY
     document.getElementById("overlay").addEventListener("click", () => {
-      document.getElementById("menu").classList.remove("show");
+      document.getElementById("menuItems").classList.remove("show");
       document.getElementById("menuIcon").classList.remove("fa-times");
       document.getElementById("menuIcon").classList.add("fa-bars");
       document.getElementById("overlay").style.display = "none";
@@ -1206,6 +1188,18 @@
             dropdownContent.classList.toggle("show-dropdown");
           }
         }
+      });
+    });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const currentItem = btn.parentElement;
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== currentItem) {
+            item.classList.remove('active');
+          }
+        });
+        currentItem.classList.toggle('active');
       });
     });
   </script>
