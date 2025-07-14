@@ -15,8 +15,110 @@
 </head>
 
 <body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo1">RioGram</a>
 
+      <!-- MOBILE MENU -->
+      <div class="menu" id="menuItems">
+        <!-- SERVICES DROPDOWN -->
+        <div class="dropdown">
+          <a href="#" class="nav_1">Services &#9662;</a>
+          <div class="dropdown-content">
+            <a href="../component/Paid_Promotion/paid.html">Paid Promotion</a>
 
+            <!-- FREE PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Free Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Free_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Free_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Free_Product_Suits/membership.html">Membership</a>
+              </div>
+            </div>
+
+            <!-- GROWTH PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Growth Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Growth_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Growth_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Growth_Product_Suits/membership.html">Membership</a>
+                <a href="../component/Growth_Product_Suits/paid.html">Paid Promotion</a>
+              </div>
+            </div>
+
+            <!-- BOOST PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Boost Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Boost_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Boost_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Boost_Product_Suits/membership.html">Membership</a>
+                <a href="../component/Boost_Product_Suits/paid.html">Paid Promotion</a>
+                <a href="../component/Boost_Product_Suits/consulting.html">Consulting</a>
+              </div>
+            </div>
+
+            <a href="../component/Automate_Product_Suits/automate.html">Automate Product Suits</a>
+          </div>
+        </div>
+
+        <a href="../component/About_Us/about.html">About Us</a>
+        <a href="../component/Contact_Us/contact.html">Contact Us</a>
+      </div>
+
+      <!-- MOBILE MENU TOGGLE -->
+      <button class="icon3" onclick="toggleMenu()">
+        <i class="fa fa-bars" id="menuIcon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- OVERLAY FOR MOBILE MENU -->
+  <div id="overlay"></div>
+
+  <script>
+    // TOGGLE MOBILE MENU FUNCTION
+    function toggleMenu() {
+      const menu = document.getElementById("menuItems");
+      const icon3 = document.getElementById("menuIcon");
+      const overlay = document.getElementById("overlay");
+
+      menu.classList.toggle("show");
+
+      if (menu.classList.contains("show")) {
+        icon3.classList.remove("fa-bars");
+        icon3.classList.add("fa-times");
+        overlay.style.display = "block";
+      } else {
+        icon3.classList.remove("fa-times");
+        icon3.classList.add("fa-bars");
+        overlay.style.display = "none";
+      }
+    }
+
+    // CLOSE MENU WHEN CLICKING OVERLAY
+    document.getElementById("overlay").addEventListener("click", () => {
+      document.getElementById("menuItems").classList.remove("show");
+      document.getElementById("menuIcon").classList.remove("fa-times");
+      document.getElementById("menuIcon").classList.add("fa-bars");
+      document.getElementById("overlay").style.display = "none";
+    });
+
+    // MOBILE DROPDOWN TOGGLE
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 767) {
+          e.preventDefault();
+          const dropdownContent = this.nextElementSibling;
+          if (dropdownContent && dropdownContent.classList.contains("dropdown-content")) {
+            dropdownContent.classList.toggle("show-dropdown");
+          }
+        }
+      });
+    });
+  </script>
   <section class="hero-section">
     <div class="bg-blur-image"></div>
 
