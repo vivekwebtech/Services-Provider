@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RioGram - Professional Web Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Pricing.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1 class="banner-title"><i class="fa fa-globe"></i> RioGram</h1>
+    <h2 class="banner-subtitle">Professional Web Solutions Provider</h2>
+    <p class="tagline">Transforming businesses through innovative web technologies, custom development, and strategic digital solutions</p>
+  </div>
+
+  <div>
+    <span class="plan-title">Choose Your Plan</span>
+    <p class="plan-description">Select the perfect solution for your business needs. From free starter plans to <br>enterprise solutions.</p>
+  </div>
+
+  <section class="pricing-section">
+    <!-- Toggle Buttons -->
+    <div class="plan-switch">
+      <button id="premiumBtn"><i class="fa fa-bolt"></i>Premium Plans</button>
+
+      <button id="freeBtn" class="active"> <i class="fa-regular fa-star"></i> Free Plans</button>
+    </div>
+
+    <!-- Free Plans -->
+    <div id="freePlans" class="pricing-cards visible">
+      <a href="#" class="pricing-card">
+        <div class="plan-title-card">Basic</div>
+        <div class="plan-subtitle">Great for personal projects</div>
+        <div class="plan-price">$0 <span class="month">/month</span></div>
+        <!-- <div class="plan-period">/month</div> -->
+        <div class="plan-feature">Basic Template Design</div>
+        <div class="plan-feature">Mobile Responsive</div>
+        <div class="plan-feature">Basic SEO</div>
+        <div class="plan-feature">Contact Form</div>
+        <div class="plan-feature">Limited Support</div>
+        <div class="plan-feature">RioGram Branding</div>
+        <span class="plan-button">Start Free</span>
+      </a>
+
+      <a href="#" class="pricing-card most-popular">
+        <div class="most-popular-label">Most Popular</div>
+        <div class="plan-title-card">Community</div>
+        <div class="plan-subtitle">Perfect for small businesses</div>
+        <div class="plan-price">$0 <span class="month">/month</span></div>
+        <!-- <div class="plan-period">/month</div> -->
+        <div class="plan-feature">Everything in Basic</div>
+        <div class="plan-feature">5 Pages Maximum</div>
+        <div class="plan-feature">Email Integration</div>
+        <div class="plan-feature">Basic Analytics</div>
+        <div class="plan-feature">Community Support</div>
+        <div class="plan-feature">Monthly Updates</div>
+        <span class="plan-button">Most Popular</span>
+      </a>
+
+      <a href="#" class="pricing-card">
+        <div class="plan-title-card">Startup</div>
+        <div class="plan-subtitle">Ideal for new startups</div>
+        <div class="plan-price">$0<span class="month">/month</span></div>
+        <!-- <div class="plan-period">/month</div> -->
+        <div class="plan-feature">Everything in Community</div>
+        <div class="plan-feature">10 Pages Maximum</div>
+        <div class="plan-feature">Social Media Links</div>
+        <div class="plan-feature">Basic E-commerce</div>
+        <div class="plan-feature">Priority Community Support</div>
+        <div class="plan-feature">Bi-weekly Updates</div>
+        <span class="plan-button">Get Started</span>
+      </a>
+    </div>
+
+    <!-- Premium Plans -->
+    <div id="premiumPlans" class="pricing-cards hidden">
+      <a href="#" class="pricing-card">
+        <div class="plan-title-card"> Starter Pro</div>
+        <div class="plan-subtitle">Perfect for growing businesses</div>
+        <div class="plan-price">$299 <span class="month">/month
+        </span></div>
+        <!-- <div class="plan-period">Custom Website Design</div> -->
+
+        <div class="plan-feature">Custom Website Design</div>
+        <div class="plan-feature">Mobile Responsive</div>
+        <div class="plan-feature">SEO Optimization</div>
+        <div class="plan-feature">Social Media Integration</div>
+        <div class="plan-feature">24/7 Support</div>
+        <div class="plan-feature">SSL Certificate</div>
+        <div class="plan-feature">Analytics Dashboard</div>
+        <span class="plan-button">Get Started</span>
+      </a>
+
+      <a href="#" class="pricing-card most-popular">
+        <div class="most-popular-label">Most Popular</div>
+        <div class="plan-title-card">Business Elite</div>
+        <div class="plan-subtitle">Ideal for established companies</div>
+        <div class="plan-price">$599 <span class="month">/month</span></div>
+        <!-- <div class="plan-period">/month</div> -->
+        <div class="plan-feature">Everything in Starter Pro</div>
+        <div class="plan-feature">E-commerce Integration</div>
+        <div class="plan-feature">Advanced Analytics</div>
+        <div class="plan-feature">Custom Plugins</div>
+        <div class="plan-feature">Priority Support</div>
+        <div class="plan-feature">Database Management</div>
+        <div class="plan-feature">API Development</div>
+        <div class="plan-feature">Performance Optimization</div>
+        <span class="plan-button">Most Popular</span>
+      </a>
+
+      <a href="#" class="pricing-card">
+        <div class="plan-title-card">Enterprise Max</div>
+        <div class="plan-subtitle"> Complete Solution for large Enterprises</div>
+        <div class="plan-price">$1,299 <span class="month">/month</span></div>
+        <!-- <div class="plan-period">Contact us</div> -->
+        <div class="plan-feature">Everything in Business Elite</div>
+        <div class="plan-feature">Dedicated Account Manager</div>
+        <div class="plan-feature">Custom Integrations</div>
+        <div class="plan-feature">Advanced Security</div>
+        <div class="plan-feature">Multi-site Management</div>
+        <div class="plan-feature">White-label Solution</div>
+        <div class="plan-feature">Training & Consulting</div>
+        <div class="plan-feature">SLA Guarantee</div>
+        <span class="plan-button">Contact Sales</span>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const freeBtn = document.getElementById('freeBtn');
+    const premiumBtn = document.getElementById('premiumBtn');
+    const freePlans = document.getElementById('freePlans');
+    const premiumPlans = document.getElementById('premiumPlans');
+
+    function togglePlans(type) {
+      if (type === 'free') {
+        freePlans.classList.remove('hidden');
+        freePlans.classList.add('visible');
+        premiumPlans.classList.remove('visible');
+        premiumPlans.classList.add('hidden');
+        freeBtn.classList.add('active');
+        premiumBtn.classList.remove('active');
+      } else {
+        premiumPlans.classList.remove('hidden');
+        premiumPlans.classList.add('visible');
+        freePlans.classList.remove('visible');
+        freePlans.classList.add('hidden');
+        premiumBtn.classList.add('active');
+        freeBtn.classList.remove('active');
+      }
+    }
+
+    freeBtn.addEventListener('click', () => togglePlans('free'));
+    premiumBtn.addEventListener('click', () => togglePlans('premium'));
+  </script>
+</body>
+</html>
