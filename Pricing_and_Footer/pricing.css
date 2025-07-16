@@ -56,15 +56,17 @@
       text-align: center;
       margin-top: 20px;
     }
-
+ 
     .pricing-section {
-      /* max-width: 1200px; */
+      max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
       text-align: center;
-      height: 500px;
+      height: 600px;
+      background-color: #ffffff;
+      border-radius: 16px;
     }
-
+ 
     .plan-switch {
       display: inline-flex;
       gap: 10px;
@@ -251,6 +253,8 @@
         font-size: 1.1rem;
       }
     }
+    
+
 
     /* Desktop Styles */
     @media (min-width: 900px) {
@@ -308,4 +312,7 @@
       .pricing-cards {
         grid-template-columns: 1fr;
       }
+      /* .pricing-card .most-popular{
+        width: 800px;
+      } */
     }
