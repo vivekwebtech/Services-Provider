@@ -7,7 +7,7 @@ import Footer from './Pricing_and_Footer/footer';
 function App() {
   return (
     <>
-    <Header />
+    {/* <Header /> */}
     <Pricing />
     <Footer />
     </>
