@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RioGram Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Services Section Container */
+        .services-section-container {
+            background: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        /* Services Section */
+        .services-section {
+            max-width: 900px;
+        }
+
+        .section-badge {
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 0 1px #334155;
+        }
+
+        .section-badge i {
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .highlight-gradient {
+            background: linear-gradient(135deg, #38bdf8, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        /* Services Cards Section */
+        .services-card-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 30px 25px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .service-description {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 13px;
+            background-color: #1e40af;
+            color: #c7d2fe;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-list i {
+            color: #22c55e;
+            font-size: 16px;
+        }
+        
+        /* Team Intro Section */
+        .team-intro-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #ffffff, #f9fafb);
+            color: #1f2937;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .team-badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0ea5e9;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 999px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-badge i {
+            margin-right: 8px;
+        }
+
+        .team-heading {
+            font-size: 38px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 25px;
+        }
+
+        .team-heading .highlight-text {
+            background: linear-gradient(to right, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .team-description {
+            font-size: 18px;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Team Members Section */
+        .team-members-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 60px 20px;
+            background-color: #f9fafb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .team-member-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            width: 340px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            font-size: 20px;
+            margin: 10px 0 5px;
+            font-weight: 700;
+        }
+
+        .highlighted-name {
+            color: #0ea5e9;
+        }
+
+        .member-info .title {
+            color: #0284c7;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .expertise-label {
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tags span {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        /* Image container with camera icon and bounce effect */
+        .image-container {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .member-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .member-photo.fade-effect {
+            opacity: 0.9;
+            transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .member-photo.fade-effect:hover {
+            opacity: 0.7;
+            transform: scale(0.95);
+            animation: bounce 1s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.95);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .camera-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 16px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Services Section -->
+    <div class="services-section-container">
+        <section class="services-section">
+            <button class="section-badge">
+                <i class="fas fa-briefcase"></i> RioGram Services
+            </button>
+
+            <h1 class="section-title">
+                Services That Transform<br>
+                <span class="highlight-gradient">Your Digital Vision</span>
+            </h1>
+
+            <p class="section-description">
+                RioGram offers comprehensive digital solutions that cover every aspect of your technology needs,<br>
+                from strategic planning to flawless implementation and ongoing support.
+            </p>
+        </section>
+
+        <section class="services-card-section">
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h3 class="service-title">Digital Strategy & Consulting</h3>
+                <p class="service-description">
+                    Comprehensive digital transformation strategies that align technology with your business objectives
+                    and market opportunities.
+                </p>
+                <span class="badge blue-badge">200+ strategies delivered</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Market Analysis & Research</li>
+                    <li><i class="fas fa-check-circle"></i> Technology Roadmapping</li>
+                    <li><i class="fas fa-check-circle"></i> ROI Optimization</li>
+                    <li><i class="fas fa-check-circle"></i> Competitive Intelligence</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #10b981, #22c55e);">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Custom Software Development</h3>
+                <p class="service-description">
+                    Bespoke software solutions built with cutting-edge technologies, scalable architecture, and industry
+                    best practices.
+                </p>
+                <span class="badge blue-badge">500+ applications built</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Web Applications</li>
+                    <li><i class="fas fa-check-circle"></i> Mobile Apps (iOS/Android)</li>
+                    <li><i class="fas fa-check-circle"></i> API Development</li>
+                    <li><i class="fas fa-check-circle"></i> System Integration</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #a855f7);">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="service-title">UI/UX Design Excellence</h3>
+                <p class="service-description">
+                    User-centered design that combines aesthetic beauty with functional excellence for optimal user
+                    experiences and engagement.
+                </p>
+                <span class="badge blue-badge">300+ designs created</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> User Experience Design</li>
+                    <li><i class="fas fa-check-circle"></i> Interface Design</li>
+                    <li><i class="fas fa-check-circle"></i> Design Systems</li>
+                    <li><i class="fas fa-check-circle"></i> Prototyping & Testing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="service-title">Cloud & Infrastructure</h3>
+                <p class="service-description">
+                    Scalable cloud solutions and infrastructure management that ensures reliability, security, and
+                    optimal performance.
+                </p>
+                <span class="badge blue-badge">150+ cloud migrations</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Cloud Migration</li>
+                    <li><i class="fas fa-check-circle"></i> DevOps Implementation</li>
+                    <li><i class="fas fa-check-circle"></i> Security Solutions</li>
+                    <li><i class="fas fa-check-circle"></i> Performance Optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="service-title">AI & Machine Learning</h3>
+                <p class="service-description">
+                    Intelligent solutions that leverage artificial intelligence and machine learning to automate
+                    processes and generate insights.
+                </p>
+                <span class="badge blue-badge">75+ AI solutions deployed</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Predictive Analytics</li>
+                    <li><i class="fas fa-check-circle"></i> Natural Language Processing</li>
+                    <li><i class="fas fa-check-circle"></i> Computer Vision</li>
+                    <li><i class="fas fa-check-circle"></i> Automation Solutions</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box" style="background: linear-gradient(135deg, #ef4444, #ec4899);">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3 class="service-title">E-commerce Solutions</h3>
+                <p class="service-description">
+                    Complete e-commerce platforms that drive sales, enhance customer experience, and scale with your
+                    business growth.
+                </p>
+                <span class="badge blue-badge">100+ stores launched</span>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Online Store Development</li>
+                    <li><i class="fas fa-check-circle"></i> Payment Integration</li>
+                    <li><i class="fas fa-check-circle"></i> Inventory Management</li>
+                    <li><i class="fas fa-check-circle"></i> Analytics & Reporting</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-intro-section">
+        <div class="team-badge">
+            <i class="fas fa-users"></i> Meet the RioGram Team
+        </div>
+        <h2 class="team-heading">
+            The Visionaries Behind<br />
+            <span class="highlight-text">RioGram's Success</span>
+        </h2>
+
+        <p class="team-description">
+            Meet the passionate individuals who bring creativity, expertise, and innovation to every RioGram project.
+            Our diverse team combines years of experience with fresh perspectives to deliver exceptional results.
+        </p>
+    </section>
+
+    <section class="team-members-section">
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Sarah Johnson" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3>Sarah Johnson</h3>
+                <p class="title">Chief Executive Officer</p>
+                <p class="bio">
+                    With over 15 years of experience in technology leadership, Sarah drives RioGram's vision for innovation and sustainable growth in the digital landscape.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Strategic Planning</span>
+                    <span>Digital Transformation</span>
+                    <span>Team Leadership</span>
+                </div>
+                <div class="footer-note">Led 200+ successful digital transformations</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                     <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Michael Chen" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3 class="highlighted-name">Michael Chen</h3>
+                <p class="title">Chief Technology Officer</p>
+                <p class="bio">
+                    Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>Cloud Architecture</span>
+                    <span>AI/ML Solutions</span>
+                    <span>DevOps Excellence</span>
+                </div>
+                <div class="footer-note">Architected systems serving 10M+ users</div>
+            </div>
+        </div>
+
+        <div class="team-member-card">
+            <div class="image-container">
+                <img src="..//Screenshot 2025-07-03 182345.png" alt="Emily Rodriguez" class="member-photo fade-effect" />
+                <i class="fas fa-camera camera-icon"></i>
+            </div>
+            <div class="member-info">
+                <h3>Emily Rodriguez</h3>
+                <p class="title">Head of Creative Design</p>
+                <p class="bio">
+                    Emily transforms complex ideas into stunning visual experiences, leading RioGram's award-winning design team with creativity and strategic insight.
+                </p>
+                <div class="expertise-label">Expertise:</div>
+                <div class="tags">
+                    <span>UX/UI Design</span>
+                    <span>Brand Strategy</span>
+                    <span>Design Systems</span>
+                </div>
+                <div class="footer-note">Winner of 15+ international design awards</div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Innovation Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="about.css">
+  <style>
+    /* Base Styles */
+    /* Base Styles & Animations */
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo1">RioGram</a>
+
+      <!-- MOBILE MENU -->
+      <div class="menu" id="menuItems">
+        <!-- SERVICES DROPDOWN -->
+        <div class="dropdown">
+          <a href="#" class="nav_1">Services &#9662;</a>
+          <div class="dropdown-content">
+            <a href="../component/Paid_Promotion/paid.html">Paid Promotion</a>
+
+            <!-- FREE PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Free Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Free_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Free_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Free_Product_Suits/membership.html">Membership</a>
+              </div>
+            </div>
+
+            <!-- GROWTH PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Growth Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Growth_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Growth_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Growth_Product_Suits/membership.html">Membership</a>
+                <a href="../component/Growth_Product_Suits/paid.html">Paid Promotion</a>
+              </div>
+            </div>
+
+            <!-- BOOST PRODUCT SUITS -->
+            <div class="dropdown">
+              <a href="#">Boost Product Suits &#9656;</a>
+              <div class="dropdown-content">
+                <a href="../component/Boost_Product_Suits/free.html">Free Demo</a>
+                <a href="../component/Boost_Product_Suits/trial.html">Trial Subscriptions</a>
+                <a href="../component/Boost_Product_Suits/membership.html">Membership</a>
+                <a href="../component/Boost_Product_Suits/paid.html">Paid Promotion</a>
+                <a href="../component/Boost_Product_Suits/consulting.html">Consulting</a>
+              </div>
+            </div>
+
+            <a href="../component/Automate_Product_Suits/automate.html">Automate Product Suits</a>
+          </div>
+        </div>
+
+        <a href="../About_Us/about.html">About Us</a>
+        <a href="../Contact_Us/contact.html">Contact Us</a>
+      </div>
+
+      <!-- MOBILE MENU TOGGLE -->
+      <button class="icon3" onclick="toggleMenu()">
+        <i class="fa fa-bars" id="menuIcon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- OVERLAY FOR MOBILE MENU -->
+  <div id="overlay"></div>
+
+  <script>
+    // TOGGLE MOBILE MENU FUNCTION
+    function toggleMenu() {
+      const menu = document.getElementById("menuItems");
+      const icon3 = document.getElementById("menuIcon");
+      const overlay = document.getElementById("overlay");
+
+      menu.classList.toggle("show");
+
+      if (menu.classList.contains("show")) {
+        icon3.classList.remove("fa-bars");
+        icon3.classList.add("fa-times");
+        overlay.style.display = "block";
+      } else {
+        icon3.classList.remove("fa-times");
+        icon3.classList.add("fa-bars");
+        overlay.style.display = "none";
+      }
+    }
+
+    // CLOSE MENU WHEN CLICKING OVERLAY
+    document.getElementById("overlay").addEventListener("click", () => {
+      document.getElementById("menuItems").classList.remove("show");
+      document.getElementById("menuIcon").classList.remove("fa-times");
+      document.getElementById("menuIcon").classList.add("fa-bars");
+      document.getElementById("overlay").style.display = "none";
+    });
+
+    // MOBILE DROPDOWN TOGGLE
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 767) {
+          e.preventDefault();
+          const dropdownContent = this.nextElementSibling;
+          if (dropdownContent && dropdownContent.classList.contains("dropdown-content")) {
+            dropdownContent.classList.toggle("show-dropdown");
+          }
+        }
+      });
+    });
+  </script>
+  <section class="hero-section">
+    <div class="bg-blur-image"></div>
+
+    <div class="animated-bg">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <span class="badge3">
+        <i class="fa-regular fa-star" style="color: rgb(252, 248, 5); margin: 0px 12px 0px 0px;"></i> Award-winning
+        Digital Innovation at RioGram
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1c91a8"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles">
+          <path
+            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+          </path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+      </span>
+
+      <div class="hero-heading">
+        <div class="highlight">RioGram</div>
+        <div class="sub-heading">Transforms Digital Dreams</div>
+        <div class="main-heading">Into Reality</div>
+      </div>
+
+      <p class="subtext">
+        A passionate team of 85+ innovators, designers, and developers at RioGram,<br />
+        dedicated to transforming bold ideas into extraordinary digital experiences that<br />
+        shape industries and inspire the future.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i> Discover RioGram's Story</a>
+        <a href="#" class="btn btn-outline"><i class="fa-solid fa-eye"></i> View Our Portfolio</a>
+      </div>
+
+      <div class="icon-wrapper">
+        <div class="icon-box"><i class="fas fa-code"></i></div>
+        <div class="icon-box"><i class="fas fa-database"></i></div>
+        <div class="icon-box"><i class="fas fa-bolt"></i></div>
+        <div class="icon-box"><i class="fas fa-cloud"></i></div>
+        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+        <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+      </div>
+    </div>
+  </section>
+</body>
+<!-- hero-section -->
+
+<section class="hero-section1">
+  <div class="hero-content1">
+    <button class="badge-btn"><i class="fas fa-building"></i> The RioGram Journey</button>
+    <div class="hero-title">
+      Building Tomorrow's Digital World,<br />
+      <span class="highlight">One Innovation at a Time</span>
+    </div>
+    <p>
+      Founded in 2012, RioGram began as a small team of visionary dreamers who believed that technology should enhance
+      human experiences, not complicate them. What started in a modest co-working space has evolved into a global
+      powerhouse for digital transformation.
+    </p>
+    <p>
+      Today, RioGram is a thriving community of 85+ passionate professionals spanning designers, developers,
+      strategists, and innovators...
+    </p>
+    <p>
+      From our humble beginnings to serving Fortune 500 companies across 50+ countries, RioGram's journey has been
+      fueled by curiosity, innovation...
+    </p>
+    <p>
+      At RioGram, we don't just build software—we craft experiences, solve complex challenges, and create lasting
+      value...
+    </p>
+    <div class="features">
+      <div class="feature green">
+        <div
+          style="background: linear-gradient(to right, #38ef7d, #11998e); padding: 15px; border-radius: 16px; display: inline-block;">
+          <i class="fa-solid fa-chart-line" style="color: white; font-size: 32px;height: 50px;"></i>
+        </div>
+        <div>
+          <h4 class="growth" style="font-size: 20px;">Growth Focused</h4>
+          <p class="description1" style="font-size: 16px;">Sustainable scaling strategies<br><span class="highlight1"
+              style="font-size: 14px;">400% average client
+              growth</span></p>
+        </div>
+      </div>
+      <div class="feature purple">
+        <div
+          style="background: linear-gradient(to right, #c471f5, #fa71cd); padding: 15px; border-radius: 16px; display: inline-block;">
+          <i class="fa-solid fa-bolt-lightning" style="color: white; font-size: 32px;height: 50px;"></i>
+        </div>
+        <div>
+          <h4 class="innovation" style="font-size: 20px;">Innovation First</h4>
+          <p class="description2" style="font-size: 16px;">Cutting-edge solutions<br><span class="highlight2"
+              style="font-size: 14px;">50+ patents filed</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img class="fade-in" src="https://img.freepik.com/free-photo/business-people-working_1098-15745.jpg"
+      alt="Office Work">
+    <!-- Coffee Cups Badge with fade-in effect -->
+    <div class="badge top-right blue fade-in">
+      <span class="badge-icon"><i class="fa-solid fa-mug-hot" style="color: white;"></i>
+      </span>
+      <div class="badge-content">
+        <strong>25K+</strong>
+        <span>Coffee Cups</span>
+        <span class="subtext1" style="color: #a5f3fc;">Fueling innovation daily</span>
+      </div>
+    </div>
+
+    <!-- Support Badge with bounce animation -->
+    <div class="badge middle-left fade-in" style="animation: bounceUpDown 1.5s infinite ease-in-out;">
+    <i class="fa-solid fa-comments" style="font-size: 24px;"></i>
+    <strong style="font-size: 18px;">24/7</strong>
+    <span>Support</span>
+</div>
+
+
+
+    <!-- Industry Awards Badge with fade-in effect -->
+    <div class="badge bottom-center yellow fade-in">
+      <i class="fa-solid fa-award badge-icon" style="color: #f1c40f;"></i>
+      <div class="badge-content">
+        <strong class="Awards" style="font-size: 24px;">35+</strong>
+        <span style="color: #080808; font-size: 16px;">Industry Awards</span>
+        <span class="subtext2" style="color: #d4a033;">Including "Best Digital Agency 2024"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- section3 -->
+
+<section class="timeline-section">
+  <div class="timeline-header">
+    <div class="timeline-badge"><i class="fa-solid fa-calendar-days"></i> RioGram's Evolution</div>
+    <h2>Milestones That Define <br><span>RioGram's <span class="highlight">Success Story</span></span></h2>
+    <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram's
+      evolution into a global digital innovation leader.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <div class="icon"><i class="fas fa-rocket"></i></div>
+        <div class="year">2012</div>
+        <div class="subtitle">The spark that started it all</div>
+        <h4>RioGram Foundation</h4>
+        <p>Founded with a vision to democratize digital innovation and make cutting-edge technology accessible to
+          businesses of all sizes.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-card">
+        <div class="icon"><i class="fas fa-award"></i></div>
+        <div class="year">2014</div>
+        <div class="subtitle">Setting new industry standards</div>
+        <h4>First Major Breakthrough</h4>
+        <p>Secured our first Fortune 500 client and delivered a groundbreaking e-commerce platform that revolutionized
+          their digital presence.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <div class="icon"><i class="fas fa-globe"></i></div>
+        <div class="year">2016</div>
+        <div class="subtitle">Thinking Globally, acting Locally</div>
+        <h4>Global Expansion</h4>
+        <p>Opened offices across three continents, establishing RioGram as a truly global digital innovation partner
+          with local expertise.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-card">
+        <div class="icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="year">2018</div>
+        <div class="subtitle">Pioneering tomorrow's solutions</div>
+        <h4>Innovation Lab Launch</h4>
+        <p>Established our dedicated R&D division, focusing on AI, blockchain, and emerging technologies to stay ahead
+          of the curve.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <div class="year">2020</div>
+        <div class="subtitle">Leading through change</div>
+        <h4>Digital Transformation Leader</h4>
+        <p>Became the go-to partner for digital transformation, helping 200+ companies navigate the new digital
+          landscape successfully.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-card">
+        <div class="icon"><i class="fa fa-trophy"></i></div>
+        <div class="year">2022</div>
+        <div class="subtitle">Excellence recognized worldwide</div>
+        <h4>Industry Recognition</h4>
+        <p>Received multiple prestigious awards for innovation, client satisfactiion, and workplace excellence from
+          leading industry bodies.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-card">
+        <!-- <div class="icon"><i class="fas fa-robot"></i></div> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+          <path
+            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+          </path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+        <div class="year">2024</div>
+        <div class="subtitle">Building tomorrow, today</div>
+        <h4>Future Ready Solutions</h4>
+        <p>Continuing to shape the digital landscape with AI-powered solutions, sustainable technology, and
+          next-generation user experiences.</p>
+      </div>
+      <div class="timeline-point"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    });
+
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  });
+</script>
+
+
+<!-- section4 -->
+<section class="stats-section">
+  <div class="animated-bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="stats-header">
+    <h2>Numbers That Showcase<br><span>RioGram's Impact</span></h2>
+    <p>Our achievements reflect RioGram's unwavering dedication to excellence and client success across every project,
+      partnership, and innovation we deliver.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-briefcase"></i></div>
+      <h3>750+</h3>
+      <h4>Projects Delivered</h4>
+      <p>Successful digital solutions</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-star"></i></div>
+      <h3>99.2%</h3>
+      <h4>Client Satisfaction</h4>
+      <p>Consistently exceeding expectations</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-users"></i></div>
+      <h3>85+</h3>
+      <h4>Expert Team Members</h4>
+      <p>Talented professionals worldwide</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-calendar-check"></i></div>
+      <h3>12+</h3>
+      <h4>Years of Excellence</h4>
+      <p>Proven track record</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-globe"></i></div>
+      <h3>50+</h3>
+      <h4>Countries Served</h4>
+      <p>Global reach and impact</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <h3>1M+</h3>
+      <h4>Users Impacted</h4>
+      <p>Lives touched by our solutions</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- section5 -->
+
+
+<section class="values-section">
+  <div class="badge1">
+    <i class="fas fa-bullseye"></i> RioGram's Core Values
+  </div>
+  <h2>
+    Values That Drive<br><span>Everything at RioGram</span>
+  </h2>
+  <p>
+    RioGram's core values are more than principles—they're the foundation that guides every decision,
+    every interaction, and every innovative solution we create for our clients worldwide.
+  </p>
+</section>
+<section class="card-grid-section">
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #ffb300, #ff6f00);">
+      <i class="fas fa-lightbulb"></i>
+    </div>
+    <h3>Innovation Excellence</h3>
+    <p>At RioGram, we constantly push technological boundaries, embracing emerging technologies and creative solutions
+      to deliver exceptional results that shape the digital future.</p>
+    <span class="badge1">50+ Patents Filed</span>
+  </div>
+
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #ff5e8e, #ff3d75);">
+      <i class="fas fa-heart"></i>
+    </div>
+    <h3>Passionate Dedication</h3>
+    <p>Our RioGram team is driven by genuine passion for creating meaningful digital experiences that solve real-world
+      problems and make a lasting positive impact.</p>
+    <span class="badge1">98% Team Satisfaction</span>
+  </div>
+
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #5a7dff, #354de8);">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3>Unwavering Integrity</h3>
+    <p>RioGram builds lasting relationships through transparency, ethical practices, and consistent delivery on our
+      promises to clients, partners, and stakeholders.</p>
+    <span class="badge1">Zero Security Breaches</span>
+  </div>
+
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #00e676, #00c853);">
+      <i class="fas fa-users"></i>
+    </div>
+    <h3>Collaborative Spirit</h3>
+    <p>We believe the best results emerge from true collaboration, working closely with our clients as partners to
+      achieve shared success and mutual growth.</p>
+    <span class="badge1">95% Client Retention</span>
+  </div>
+
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #b388ff, #7c4dff);">
+      <i class="fas fa-bullseye"></i>
+    </div>
+    <h3>Excellence Standard</h3>
+    <p>RioGram strives for perfection in every detail, ensuring our solutions consistently exceed expectations and set
+      new industry benchmarks for quality.</p>
+    <span class="badge1">99.9% Uptime Record</span>
+  </div>
+
+  <div class="card">
+    <div class="icon" style="background: linear-gradient(to bottom right, #00e5ff, #00bcd4);">
+      <i class="fas fa-leaf"></i>
+    </div>
+    <h3>Visionary Leadership</h3>
+    <p>We anticipate tomorrow's opportunities today, preparing innovative solutions that help our clients stay ahead of
+      market trends and technological shifts.</p>
+    <span class="badge1">10+ Years Ahead</span>
+  </div>
+</section>
+
+<!-- FontAwesome for the icon -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- section 7 -->
+
+
+<!-- Services Section -->
+<div class="services-section-container">
+  <section class="services-section">
+    <button class="section-badge2">
+      <i class="fas fa-briefcase"></i> RioGram Services
+    </button>
+
+    <h1 class="section-title">
+      Services That Transform<br>
+      <span class="highlight-gradient">Your Digital Vision</span>
+    </h1>
+
+    <p class="section-description">
+      RioGram offers comprehensive digital solutions that cover every aspect of your technology needs,<br>
+      from strategic planning to flawless implementation and ongoing support.
+    </p>
+  </section>
+
+  <section class="services-card-section">
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+        <i class="fas fa-compass"></i>
+      </div>
+      <h3 class="service-title">Digital Strategy & Consulting</h3>
+      <p class="service-description">
+        Comprehensive digital transformation strategies that align technology with your business objectives
+        and market opportunities.
+      </p>
+      <span class="badge2 blue-badge2">200+ strategies delivered</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> Market Analysis & Research</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Technology Roadmapping</li>
+        <li><i class="fas fa-check-circle check-icon"></i> ROI Optimization</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Competitive Intelligence</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #10b981, #22c55e);">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3 class="service-title">Custom Software Development</h3>
+      <p class="service-description">
+        Bespoke software solutions built with cutting-edge technologies, scalable architecture, and industry
+        best practices.
+      </p>
+      <span class="badge2 blue-badge2">500+ applications built</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> Web Applications</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Mobile Apps (iOS/Android)</li>
+        <li><i class="fas fa-check-circle check-icon"></i> API Development</li>
+        <li><i class="fas fa-check-circle check-icon"></i> System Integration</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #a855f7);">
+        <i class="fas fa-palette"></i>
+      </div>
+      <h3 class="service-title">UI/UX Design Excellence</h3>
+      <p class="service-description">
+        User-centered design that combines aesthetic beauty with functional excellence for optimal user
+        experiences and engagement.
+      </p>
+      <span class="badge2 blue-badge2">300+ designs created</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> User Experience Design</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Interface Design</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Design Systems</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Prototyping & Testing</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+        <i class="fas fa-cloud"></i>
+      </div>
+      <h3 class="service-title">Cloud & Infrastructure</h3>
+      <p class="service-description">
+        Scalable cloud solutions and infrastructure management that ensures reliability, security, and
+        optimal performance.
+      </p>
+      <span class="badge2 blue-badge2">150+ cloud migrations</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> Cloud Migration</li>
+        <li><i class="fas fa-check-circle check-icon"></i> DevOps Implementation</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Security Solutions</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Performance Optimization</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+        <i class="fas fa-bolt"></i>
+      </div>
+      <h3 class="service-title">AI & Machine Learning</h3>
+      <p class="service-description">
+        Intelligent solutions that leverage artificial intelligence and machine learning to automate
+        processes and generate insights.
+      </p>
+      <span class="badge2 blue-badge2">75+ AI solutions deployed</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> Predictive Analytics</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Natural Language Processing</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Computer Vision</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Automation Solutions</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="icon-box" style="background: linear-gradient(135deg, #ef4444, #ec4899);">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <h3 class="service-title">E-commerce Solutions</h3>
+      <p class="service-description">
+        Complete e-commerce platforms that drive sales, enhance customer experience, and scale with your
+        business growth.
+      </p>
+      <span class="badge2 blue-badge2">100+ stores launched</span>
+      <ul class="service-list">
+        <li><i class="fas fa-check-circle check-icon"></i> Online Store Development</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Payment Integration</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Inventory Management</li>
+        <li><i class="fas fa-check-circle check-icon"></i> Analytics & Reporting</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- Team Section -->
+<section class="team-intro-section">
+  <div class="team-badge2">
+    <i class="fas fa-users"></i> Meet the RioGram Team
+  </div>
+  <h2 class="team-heading">
+    The Visionaries Behind<br />
+    <span class="highlight-text">RioGram's Success</span>
+  </h2>
+
+  <p class="team-description">
+    Meet the passionate individuals who bring creativity, expertise, and innovation to every RioGram project.
+    Our diverse team combines years of experience with fresh perspectives to deliver exceptional results.
+  </p>
+</section>
+
+<section class="team-members-section">
+  <div class="team-member-card">
+    <div class="image-container">
+      <img src="../About_Us//image2.png" alt="Sarah Johnson" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Chief Technology Officer</p>
+      <p class="bio">
+        With over 15 years of experience in technology leadership, Michael drives RioGram's vision for innovation and
+        sustainable growth in the digital landscape.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>Strategic Planning</span>
+        <span>Digital Transformation</span>
+        <span>Team Leadership</span>
+      </div>
+      <div class="footer-note">Led 200+ successful digital transformations</div>
+    </div>
+  </div>
+
+  <div class="team-member-card">
+    <div class="image-container">
+      <img src="../About_Us//image2.png" alt="Michael Chen" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Chief Technology Officer</p>
+      <p class="bio">
+        Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies
+        and architectural excellence.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>Cloud Architecture</span>
+        <span>AI/ML Solutions</span>
+        <span>DevOps Excellence</span>
+      </div>
+      <div class="footer-note">Architected systems serving 10M+ users</div>
+    </div>
+  </div>
+
+  <div class="team-member-card">
+    <div class="image-container">
+      <img src="../About_Us//image2.png" alt="Michael Chen" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Chief Technology Officer</p>
+      <p class="bio">
+        Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies
+        and architectural excellence.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>Cloud Architecture</span>
+        <span>AI/ML Solutions</span>
+        <span>DevOps Excellence</span>
+      </div>
+      <div class="footer-note">Architected systems serving 10M+ users</div>
+    </div>
+  </div>
+
+  <div class="team-member-card">
+    <div class="image-container">
+      <img src="../About_Us//image2.png" alt="Michael Chen" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Chief Technology Officer</p>
+      <p class="bio">
+        Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies
+        and architectural excellence.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>Cloud Architecture</span>
+        <span>AI/ML Solutions</span>
+        <span>DevOps Excellence</span>
+      </div>
+      <div class="footer-note">Architected systems serving 10M+ users</div>
+    </div>
+  </div>
+
+  <div class="team-member-card">
+    <div class="image-container">
+      <img
+        src="../About_Us//image2.png"
+        alt="Michael Chen" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Chief Technology Officer</p>
+      <p class="bio">
+        Michael spearheads RioGram's technical strategy, ensuring we remain at the cutting edge of emerging technologies
+        and architectural excellence.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>Cloud Architecture</span>
+        <span>AI/ML Solutions</span>
+        <span>DevOps Excellence</span>
+      </div>
+      <div class="footer-note">Architected systems serving 10M+ users</div>
+    </div>
+  </div>
+
+  <div class="team-member-card">
+    <div class="image-container">
+      <img src="../About_Us//image2.png" alt="Emily Rodriguez" class="member-photo fade-effect" />
+      <i class="fas fa-camera camera-icon"></i>
+    </div>
+    <div class="member-info">
+      <span class="highlighted-name">Michael Chen</span>
+      <p class="title">Head of Creative Design</p>
+      <p class="bio">
+        Emily transforms complex ideas into stunning visual experiences, leading RioGram's award-winning design team
+        with creativity and strategic insight.
+      </p>
+      <div class="expertise-label">Expertise:</div>
+      <div class="tags">
+        <span>UX/UI Design</span>
+        <span>Brand Strategy</span>
+        <span>Design Systems</span>
+      </div>
+      <div class="footer-note">Winner of 15+ international design awards</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- section8 -->
+<section class="testimonial-section">
+  <div class="animated-bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <div class="testimonial-header">
+    <div class="testimonial-badge">
+      <i class="fas fa-quote-left"></i> RioGram Client Stories
+    </div>
+    <h2>
+      What Our Clients <span class="highlight">Say About Us</span>
+    </h2>
+  </div>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-wrapper">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alexandra Smith" class="client-photo">
+            <div>
+              <div class="client-name">Alexandra Smith</div>
+              <div class="client-title">CEO, <strong>TechCorp Global</strong></div>
+              <div class="client-sub">Fortune 500 Technology Company</div>
+            </div>
+          </div>
+          <div class="stars">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+
+        <p class="testimonial-text">
+          "RioGram transformed our entire digital ecosystem. Their innovative approach and meticulous<br />
+          attention to detail didn't just meet our expectations—they redefined what we thought was<br />
+          possible for our industry."
+        </p>
+
+        <div class="testimonial-tags">
+          <span class="tag tag-project">Project: Digital Transformation</span>
+          <span class="tag tag-result">Result: 300% engagement increase</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+            <div>
+              <div class="client-name">Robert Johnson</div>
+              <div class="client-title">CTO, InnovateLabs</div>
+              <div class="client-sub">Leading AI Reasearch Company</div>
+            </div>
+          </div>
+          <div class="stars">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+
+        <p class="testimonial-text">
+          "The technical expertise and creative vision that RioGram brought to our AI <br />
+          platform was extraordinary. They delivered a solution that was not only <br />
+          technically superior but also beautifully designed and user-friendly."
+        </p>
+
+        <div class="testimonial-tags">
+          <span class="tag tag-project">Project: AI Platform Development</span>
+          <span class="tag tag-result">Result: 50% faster processing speeds</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+            <div>
+              <div class="client-name">Maria Garcia</div>
+              <div class="client-title">Founder, StartupX</div>
+              <div class="client-sub">Fast-Growing Fintech Company</div>
+            </div>
+          </div>
+          <div class="stars">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+
+        <p class="testimonial-text">
+          "From initial concept to successful launch, RioGram was our trusted partner<br />
+          every step of the way. Their strategic insights and flawless execution were<br />
+          instrumental in our rapid growth and market success."
+        </p>
+
+        <div class="testimonial-tags">
+          <span class="tag tag-project">Project: Fintech Plateform Launch</span>
+          <span class="tag tag-result">Resul: $10M Funding raised post-launch
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson" class="client-photo">
+            <div>
+              <div class="client-name">DR.James Wilson</div>
+              <div class="client-title">Director Of Digital Health</div>
+              <div class="client-sub">Global Healthcare Network</div>
+            </div>
+          </div>
+          <div class="stars">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+
+        <p class="testimonial-text">
+          "RioGram's healthcare platform has revolutionized how we deliver patient<br />
+          care. Their understanding of both technology and healthcare needs resulted<br />
+          in a solution that truly makes a difference in people's lives."
+        </p>
+
+        <div class="testimonial-tags">
+          <span class="tag tag-project">Project: Healthcare Management System</span>
+          <span class="tag tag-result">Result: 40% improvement in patient outcomes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-navigation">
+      <button class="nav-button prev-btn">&#8592;</button>
+      <div class="pagination-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+      <button class="nav-button next-btn">&#8594;</button>
+    </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.testimonial-wrapper');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    // Show specific slide
+    function goToSlide(index) {
+      currentIndex = index;
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % cards.length;
+      goToSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      goToSlide(currentIndex);
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-index'));
+        goToSlide(slideIndex);
+        resetAutoSlide();
+      });
+    });
+
+    const slider = document.querySelector('.testimonial-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
+
+    // Initial setup
+    goToSlide(currentIndex);
+    startAutoSlide();
+  });
+</script>
+
+
+
+<!-- section9 -->
+
+ <div class="main-container2">
+    <!-- Contact Section -->
+    <section class="contact-section1">
+      <div class="contact-left">
+        <div class="contact-left-cards1">
+          <h1 class="title2">
+            Ready to Start Your <br>
+            <span class="gradient-text">RioGram Journey?</span>
+          </h1>
+          <p class="subtitle">
+            Whether you have a groundbreaking project in mind or want to explore digital possibilities, RioGram is here to
+            help. Let's create something extraordinary together that makes a real impact on your business and industry.
+          </p>
+        </div>
+
+        <div class="contact-left-cards2">
+          <div class="contact-card3">
+            <div class="icon2" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="details1">
+              <span class="highlighted-name2">Email RioGram</span>
+              <p>hello@riogram.com</p>
+              <span class="note" style="color: #00d4ff;">We respond within 2 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-card3">
+            <div class="icon2" style="background: linear-gradient(135deg, #ff00cc, #ff5e62);">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="details1">
+              <span class="highlighted-name2">Call RioGram</span>
+              <p>+1 (555) 123-GRAM</p>
+              <span class="note" style="color: #c084fc;">Available 24/7 for urgent projects</span>
+            </div>
+          </div>
+
+          <div class="contact-card3">
+            <div class="icon2" style="background: linear-gradient(135deg, #00c853, #43a047);">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="details1">
+              <span class="highlighted-name2">Visit RioGram</span>
+              <p>123 Innovation Street, Tech City, TC 12345</p>
+              <span class="note" style="color: #00e676;">Open workspace, coffee always ready</span>
+            </div>
+          </div>
+
+          <div class="contact-card3">
+            <div class="icon2" style="background: linear-gradient(135deg, #ff9800, #ff5722);">
+              <i class="fas fa-headphones-alt"></i>
+            </div>
+            <div class="details1">
+              <span class="highlighted-name2">Support RioGram</span>
+              <p>support@riogram.com</p>
+              <span class="note" style="color: #ffb300;">Round-the-clock assistance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <form class="contact-form">
+          <h2 class="form-title">Start Your RioGram Project</h2>
+          <div class="form-group-double">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Doe">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Your Company Name">
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">Project Type</label>
+            <select id="projectType">
+              <option>Select a RioGram Services</option>
+              <option>Digital Strategy & Consulting</option>
+              <option>Custom Software Development</option>
+              <option>Cloud & Infrastructure</option>
+              <option>UI/UX Design Excellence</option>
+              <option>AI & Machine Learning</option>
+              <option>E-commerce Solution</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projectbudget">Project Budget</label>
+            <select id="projectbudget">
+              <option>Select budget range</option>
+              <option>$10K-$25K</option>
+              <option>$25K-$50K</option>
+              <option>$50K-$100K</option>
+              <option>$100K+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" rows="8" required placeholder="Describe your project goals, challenges, and how RioGram can help bring your vision to life..."></textarea>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-play"></i>Launch Your RioGram Project</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+-
+ <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <span class="brand">
+      <!-- Left Sparkle Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+
+      <!-- Brand Name -->
+               <span class="brand-blink">RioGram</span>
+
+
+      <!-- Right Sparkle Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c91a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 animate-pulse">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+        <path d="M5 3v4"></path>
+        <path d="M19 17v4"></path>
+        <path d="M3 5h4"></path>
+        <path d="M17 19h4"></path>
+      </svg>
+    </span>
+
+    <p class="copyright">
+      © 2024 RioGram. Crafted with passion, precision, and endless creativity.
+    </p>
+    <p class="tagline">
+      Transforming ideas into digital reality, one innovation at a time.
+    </p>
+
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Careers</a>
+      <a href="#">Blog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

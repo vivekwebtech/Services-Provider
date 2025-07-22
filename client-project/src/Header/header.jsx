@@ -1,118 +1,76 @@
-import React, { useEffect } from "react";
-import "./header.css";
-import {
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+// src/components/Header/Header.jsx
+import { useState } from 'react';
+import { useRef } from 'react';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import './Header.css';
 
 const Header = () => {
-  useEffect(() => {
-    const overlay = document.getElementById("overlay");
-    const menuIcon = document.getElementById("menuIcon");
-    const menu = document.getElementById("menuItems");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
-    const toggleMenu = () => {
-      menu.classList.toggle("show");
-      if (menu.classList.contains("show")) {
-        menuIcon.classList.remove("fa-bars");
-        menuIcon.classList.add("fa-times");
-        overlay.style.display = "block";
-      } else {
-        menuIcon.classList.remove("fa-times");
-        menuIcon.classList.add("fa-bars");
-        overlay.style.display = "none";
-      }
-    };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-    const closeMenu = () => {
-      menu.classList.remove("show");
-      menuIcon.classList.remove("fa-times");
-      menuIcon.classList.add("fa-bars");
-      overlay.style.display = "none";
-    };
-
-    document.getElementById("menuButton").addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", closeMenu);
-
-    // Handle mobile dropdown toggles
-    document.querySelectorAll(".dropdown > a").forEach(link => {
-      link.addEventListener("click", function (e) {
-        if (window.innerWidth <= 767) {
-          e.preventDefault();
-          const dropdownContent = this.nextElementSibling;
-          if (dropdownContent && dropdownContent.classList.contains("dropdown-content")) {
-            dropdownContent.classList.toggle("show-dropdown");
-          }
-        }
-      });
-    });
-
-    return () => {
-      overlay.removeEventListener("click", closeMenu);
-    };
-  }, []);
+  const toggleDropdown = (dropdown) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
 
   return (
-    <>
-      <header className="header">
-        <nav className="nav">
-          <a href="#" className="logo1">RioGram</a>
+    <header className="header">
+      <nav className="nav">
+        <Link to="/" className="logo1">RioGram</Link>
 
-          <div className="menu" id="menuItems">
-            <div className="dropdown">
-              <a href="#" className="nav_1">Services &#9662;</a>
-              <div className="dropdown-content">
-                <a href="../component/Paid_Promotion/paid.html">Paid Promotion</a>
+        {/* Mobile Menu Toggle */}
+        <button className="icon" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-                {/* Free Product Suits */}
-                <div className="dropdown">
-                  <a href="#">Free Product Suits &#9656;</a>
-                  <div className="dropdown-content">
-                    <a href="../component/Free_Product_Suits/free.html">Free Demo</a>
-                    <a href="../component/Free_Product_Suits/trial.html">Trial Subscriptions</a>
-                    <a href="../component/Free_Product_Suits/membership.html">Membership</a>
-                  </div>
+        {/* Navigation Menu */}
+        <div className={`menu ${menuOpen ? 'show' : ''}`} id="menuItems">
+          {/* Services Dropdown */}
+          <div className="dropdown">
+            <button 
+              className="nav_1" 
+              onClick={() => toggleDropdown('services')}
+            >
+              Services &#9662;
+            </button>
+            <div className={`dropdown-content ${openDropdown === 'services' ? 'show-dropdown' : ''}`}>
+              <NavLink to="/services/paid-promotion" onClick={() => setMenuOpen(false)}>Paid Promotion</NavLink>
+              
+              {/* Free Product Suits */}
+              <div className="dropdown">
+                <button onClick={() => toggleDropdown('freeProducts')}>
+                  Free Product Suits &#9656;
+                </button>
+                <div className={`dropdown-content ${openDropdown === 'freeProducts' ? 'show-dropdown' : ''}`}>
+                  <NavLink to="/services/free-product-suits/free-demo" onClick={() => setMenuOpen(false)}>Free Demo</NavLink>
+                  <NavLink to="/services/free-product-suits/trial-subscriptions" onClick={() => setMenuOpen(false)}>Trial Subscriptions</NavLink>
+                  <NavLink to="/services/free-product-suits/membership" onClick={() => setMenuOpen(false)}>Membership</NavLink>
                 </div>
-
-                {/* Growth Product Suits */}
-                <div className="dropdown">
-                  <a href="#">Growth Product Suits &#9656;</a>
-                  <div className="dropdown-content">
-                    <a href="../component/Growth_Product_Suits/free.html">Free Demo</a>
-                    <a href="../component/Growth_Product_Suits/trial.html">Trial Subscriptions</a>
-                    <a href="../component/Growth_Product_Suits/membership.html">Membership</a>
-                    <a href="../component/Growth_Product_Suits/paid.html">Paid Promotion</a>
-                  </div>
-                </div>
-
-                {/* Boost Product Suits */}
-                <div className="dropdown">
-                  <a href="#">Boost Product Suits &#9656;</a>
-                  <div className="dropdown-content">
-                    <a href="../component/Boost_Product_Suits/free.html">Free Demo</a>
-                    <a href="../component/Boost_Product_Suits/trial.html">Trial Subscriptions</a>
-                    <a href="../component/Boost_Product_Suits/membership.html">Membership</a>
-                    <a href="../component/Boost_Product_Suits/paid.html">Paid Promotion</a>
-                    <a href="../component/Boost_Product_Suits/consulting.html">Consulting</a>
-                  </div>
-                </div>
-
-                <a href="../component/Automate_Product_Suits/automate.html">Automate Product Suits</a>
               </div>
+              
+              {/* Add other dropdowns similarly */}
             </div>
-
-            <a href="../component/About_Us/about.html">About Us</a>
-            <a href="../component/Contact_Us/contact.html">Contact Us</a>
           </div>
-
-          <button className="icon" id="menuButton">
-            <i className="fa fa-bars" id="menuIcon"></i>
-          </button>
-        </nav>
-      </header>
-
-      <div id="overlay"></div>
-    </>
+          
+          <NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink>
+          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
+        </div>
+      </nav>
+      
+      {/* Overlay for mobile menu */}
+      {menuOpen && (
+        <div 
+          id="overlay" 
+          onClick={() => setMenuOpen(false)}
+          style={{ display: menuOpen ? 'block' : 'none' }}
+        />
+      )}
+    </header>
   );
 };
 
