@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import { FaBars, FaTimes, FaPhone, FaEnvelope, FaComments, FaMapMarker, FaLink, FaArrowDown, FaPaperPlane } from "react-icons/fa";
-import { Router } from "react-router-dom";
 
 const ContactUs = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +16,6 @@ const ContactUs = () => {
   };
 
   return (
-    <Router>
     <div>
       {/* HERO SECTION */}
       <section className="hero">
@@ -132,7 +130,6 @@ const ContactUs = () => {
         </footer>
       </div>
     </div>
-    </Router>
   );
 };
 
@@ -158,7 +155,6 @@ const Card = ({ icon, title, content, sub, button, social }) => (
       )}
     </div>
   </div>
-  
 );
 
 export default ContactUs;

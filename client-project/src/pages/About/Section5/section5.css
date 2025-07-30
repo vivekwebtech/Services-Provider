@@ -1,0 +1,159 @@
+/* Base Styles */
+.values-section {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.values-section .badge {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #7B61FF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.values-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.values-section h2 span {
+  color: #7B61FF;
+}
+
+.values-section p {
+  font-size: 1.1rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* Card Grid Section */
+.card-grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #6B7280;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card .badge {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #7B61FF;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Animation for icons */
+.card .icon {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.1);
+}
+
+/* Gradient backgrounds for each icon */
+.card:nth-child(1) .icon {
+  background: linear-gradient(to bottom right, #ffb300, #ff6f00);
+}
+
+.card:nth-child(2) .icon {
+  background: linear-gradient(to bottom right, #ff5e8e, #ff3d75);
+}
+
+.card:nth-child(3) .icon {
+  background: linear-gradient(to bottom right, #5a7dff, #354de8);
+}
+
+.card:nth-child(4) .icon {
+  background: linear-gradient(to bottom right, #00e676, #00c853);
+}
+
+.card:nth-child(5) .icon {
+  background: linear-gradient(to bottom right, #b388ff, #7c4dff);
+}
+
+.card:nth-child(6) .icon {
+  background: linear-gradient(to bottom right, #00e5ff, #00bcd4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .values-section h2 {
+    font-size: 2rem;
+  }
+  
+  .card-grid-section {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values-section {
+    padding: 40px 15px;
+  }
+  
+  .values-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .card-grid-section {
+    grid-template-columns: 1fr;
+  }
+}

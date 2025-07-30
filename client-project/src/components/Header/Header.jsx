@@ -52,12 +52,11 @@ function Header() {
   }, []);
 
   return (
-    <Router>
-      <>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
+    <>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
 
         {/* HEADER SECTION */}
         <header className="header">
@@ -101,10 +100,10 @@ function Header() {
                   <NavLink to="#">Automate Product Suits</NavLink>
                 </div>
               </div>
-
+            
               {/* Fixed NavLink paths */}
-              <NavLink to="/AboutUs">About Us</NavLink>
-              <NavLink to="/ContactUs">Contact Us</NavLink>
+              <NavLink to="./about">About Us</NavLink>
+              <NavLink to="./contact">Contact Us</NavLink>
             </div>
 
             {/* MOBILE MENU TOGGLE */}
@@ -120,7 +119,7 @@ function Header() {
         {/* ROUTES */}
         
       </>
-    </Router>
+   
   );
 }
 

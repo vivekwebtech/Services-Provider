@@ -1,20 +1,22 @@
 import React from 'react';
-import Header from './components/Header/Header';
 import './App.css';
-import Pricing from './Pricing_and_Footer/pricing'; 
-import Footer from './Pricing_and_Footer/footer';
-import RioGramHero from './pages/About/Section1/section1';
-import ContactUs from './pages/ContactUs/ContactUs';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from './pages/About/about';
+// import ContactUs from './pages/Contact/contact';
+import MainContent from './pages/Home/home';
 function App() {
   return (
-    <>
-    <Header />
-   {/* <RioGramHero /> */}
-
-    {/* <Pricing /> */}
-    {/* <Footer /> */}
-    
-    </>
+    <Router>
+      <Header />
+      <MainContent />
+      <Routes>
+        <Route path="/about" element={<AboutUs />} />
+        {/* <Route path="/contact" element={<ContactUs />} /> */}
+        {/* Other routes */}
+      </Routes>
+      {/* <Footer /> */}
+    </Router>
   );
 }
 
