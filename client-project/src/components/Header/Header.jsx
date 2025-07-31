@@ -61,7 +61,7 @@ function Header() {
         {/* HEADER SECTION */}
         <header className="header">
           <nav className="nav">
-            <NavLink to="/" className="logo1">RioGram</NavLink>
+            <NavLink to="./home" className="logo1">RioGram</NavLink>
 
             {/* MOBILE MENU */}
             <div className="menu" id="menuItems">
@@ -100,10 +100,13 @@ function Header() {
                   <NavLink to="#">Automate Product Suits</NavLink>
                 </div>
               </div>
+              
             
               {/* Fixed NavLink paths */}
               <NavLink to="./about">About Us</NavLink>
+              <NavLink to="/">Privacy Policy</NavLink>
               <NavLink to="./contact">Contact Us</NavLink>
+              
             </div>
 
             {/* MOBILE MENU TOGGLE */}

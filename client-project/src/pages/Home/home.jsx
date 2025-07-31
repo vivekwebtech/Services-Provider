@@ -1,5 +1,5 @@
 import React from "react";
-import ".home.css"; // Or import './MainContent.css' if styles are separated
+import "./home.css"; // Or import './MainContent.css' if styles are separated
 
 const MainContent = () => {
   return (
