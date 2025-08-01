@@ -11,7 +11,7 @@ const Pricing = () => {
     <div className="pricing-page">
       {/* Banner Section */}
       <div className="banner">
-        <h1 className="banner-title"><FaGlobe /> RioGram</h1>
+        <h1 className="banner-title" style={{color:'black'}}><FaGlobe /> RioGram</h1>
         <h2 className="banner-subtitle">Professional Web Solutions Provider</h2>
         <p className="tagline">
           Transforming businesses through innovative web technologies, custom development,

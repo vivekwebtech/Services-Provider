@@ -1,7 +1,7 @@
 // App.js
 import React, { useEffect } from 'react';
 import './Header.css';
-import { BrowserRouter as Router, NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   useEffect(() => {
@@ -61,7 +61,7 @@ function Header() {
         {/* HEADER SECTION */}
         <header className="header">
           <nav className="nav">
-            <NavLink to="./home" className="logo1">RioGram</NavLink>
+            <NavLink to="./home" className="logo1" style={{fontSize: '24px', fontWeight: 'bold'}}>RioGram</NavLink>
 
             {/* MOBILE MENU */}
             <div className="menu" id="menuItems">
@@ -104,8 +104,9 @@ function Header() {
             
               {/* Fixed NavLink paths */}
               <NavLink to="./about">About Us</NavLink>
-              <NavLink to="/">Privacy Policy</NavLink>
-              <NavLink to="./contact">Contact Us</NavLink>
+              <NavLink to="./contact" >Contact Us</NavLink>
+              <NavLink to="./privacy">Privacy-Policy </NavLink>
+
               
             </div>
 

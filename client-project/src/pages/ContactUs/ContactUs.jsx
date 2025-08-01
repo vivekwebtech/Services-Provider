@@ -18,7 +18,7 @@ const ContactUs = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="hero">
+      <section className="hero1" style={{ alignItems: 'center' }}>
         <div className="hero-content">
           <h1>Let's Start a <span className="highlight">Conversation</span></h1>
           <p className="hero-description">We're here to help you succeed...</p>
@@ -36,7 +36,7 @@ const ContactUs = () => {
       {/* CONTACT SECTION */}
       <section className="contact-section">
         <div className="connect">
-          <h2 className="ready">Ready to Connect?</h2>
+          <h2 className="ready" style={{ color: '#5041BC' }}>Ready to Connect?</h2>
           <p className="subtext1">Choose the method that works best...</p>
           <p className="subtext2">...building lasting relationships with our clients.</p>
         </div>
@@ -158,3 +158,5 @@ const Card = ({ icon, title, content, sub, button, social }) => (
 );
 
 export default ContactUs;
+
+

@@ -16,7 +16,7 @@ export default function AboutUs() {
       <Timeline />
       <StatsSection />
       <CoreValues />
-      <RioGramServices />
+      {/* <RioGramServices /> */}
       <Testimonials />
       <RioGramContact />
 
