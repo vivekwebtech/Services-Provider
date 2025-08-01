@@ -82,7 +82,7 @@
 //           <FaArrowLeft /> <span>Back to Home</span>
 //         </a>
 //       </header>
-      
+
 //       <div className="container">
 //         {/* Mobile menu button */}
 //         <button 
@@ -173,7 +173,7 @@
 //               </h2>
 //               {expandedSections["info-collect"] ? <FaChevronUp /> : <FaChevronDown />}
 //             </button>
-            
+
 //             <div 
 //               id="info-collect-content"
 //               className={`section-content ${expandedSections["info-collect"] ? 'expanded' : ''}`}
@@ -218,7 +218,7 @@
 //               </h2>
 //               {expandedSections["use-info"] ? <FaChevronUp /> : <FaChevronDown />}
 //             </button>
-            
+
 //             <div 
 //               id="use-info-content"
 //               className={`section-content ${expandedSections["use-info"] ? 'expanded' : ''}`}
@@ -234,7 +234,7 @@
 //                 <li>To prevent fraud and enhance security</li>
 //                 <li>To comply with legal obligations and enforce our terms</li>
 //               </ul>
-              
+
 //               <h3>Legal Basis for Processing</h3>
 //               <p>We process your personal information based on:</p>
 //               <ul>
@@ -264,25 +264,25 @@
 //               </h2>
 //               {expandedSections["sharing"] ? <FaChevronUp /> : <FaChevronDown />}
 //             </button>
-            
+
 //             <div 
 //               id="sharing-content"
 //               className={`section-content ${expandedSections["sharing"] ? 'expanded' : ''}`}
 //             >
 //               <p>We may share your information in the following circumstances:</p>
-              
+
 //               <h3>Service Providers</h3>
 //               <p>We may employ third-party companies and individuals to facilitate our services, provide services on our behalf, perform service-related services, or assist us in analyzing how our services are used.</p>
-              
+
 //               <h3>Business Transfers</h3>
 //               <p>If we are involved in a merger, acquisition, or asset sale, your personal information may be transferred.</p>
-              
+
 //               <h3>Legal Requirements</h3>
 //               <p>We may disclose your information if required to do so by law or in response to valid requests by public authorities.</p>
-              
+
 //               <h3>With Your Consent</h3>
 //               <p>We may share your information for any other purpose with your explicit consent.</p>
-              
+
 //               <div className="notice-box">
 //                 <FaExclamationTriangle />
 //                 <p>We do not sell your personal information to third parties for their marketing purposes without your explicit consent.</p>
@@ -308,7 +308,7 @@
 //               </h2>
 //               {expandedSections["security"] ? <FaChevronUp /> : <FaChevronDown />}
 //             </button>
-            
+
 //             <div 
 //               id="security-content"
 //               className={`section-content ${expandedSections["security"] ? 'expanded' : ''}`}
@@ -321,9 +321,9 @@
 //                 <li>Employee security training and awareness programs</li>
 //                 <li>Incident response and breach notification procedures</li>
 //               </ul>
-              
+
 //               <p>While we strive to use commercially acceptable means to protect your personal information, no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
-              
+
 //               <div className="security-tips">
 //                 <h3>Security Tips for Users</h3>
 //                 <ul>
@@ -348,7 +348,7 @@
 //               <FaGlobe aria-hidden="true" /> Cookies & Tracking
 //             </h2>
 //             <p>We use cookies and similar tracking technologies to track activity on our service and hold certain information.</p>
-            
+
 //             <h3>Types of Cookies We Use</h3>
 //             <ul>
 //               <li><strong>Essential Cookies:</strong> Necessary for the website to function</li>
@@ -356,10 +356,10 @@
 //               <li><strong>Functionality Cookies:</strong> Remember choices you make</li>
 //               <li><strong>Targeting Cookies:</strong> Used to deliver relevant ads</li>
 //             </ul>
-            
+
 //             <h3>Your Cookie Choices</h3>
 //             <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our service.</p>
-            
+
 //             <div className="cookie-settings">
 //               <button className="cookie-prefs-button">Manage Cookie Preferences</button>
 //             </div>
@@ -376,7 +376,7 @@
 //               <FaCheckCircle aria-hidden="true" /> Your Rights
 //             </h2>
 //             <p>Depending on your location, you may have certain rights regarding your personal information:</p>
-            
+
 //             <div className="rights-grid">
 //               <div className="right-item">
 //                 <h3>Access</h3>
@@ -403,7 +403,7 @@
 //                 <p>Object to certain processing activities</p>
 //               </div>
 //             </div>
-            
+
 //             <p>To exercise these rights, please contact us using the information in the "Contact Information" section below.</p>
 //           </section>
 
@@ -418,7 +418,7 @@
 //               <FaDatabase aria-hidden="true" /> Data Retention
 //             </h2>
 //             <p>We retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy.</p>
-            
+
 //             <h3>Retention Periods</h3>
 //             <ul>
 //               <li><strong>Account Data:</strong> Retained while your account is active and for 3 years after deactivation</li>
@@ -426,7 +426,7 @@
 //               <li><strong>Marketing Data:</strong> Until you unsubscribe or for 2 years after last interaction</li>
 //               <li><strong>Cookies:</strong> Varies by cookie type, typically 30 days to 2 years</li>
 //             </ul>
-            
+
 //             <p>We may retain certain information for longer periods when required by law or for legitimate business purposes such as:</p>
 //             <ul>
 //               <li>Compliance with legal obligations</li>
@@ -447,9 +447,9 @@
 //               <FaPlane aria-hidden="true" /> International Transfers
 //             </h2>
 //             <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
-            
+
 //             <p>If you are located outside the United States and choose to provide information to us, please note that we transfer the data, including personal data, to the United States and process it there.</p>
-            
+
 //             <h3>Safeguards for Transfers</h3>
 //             <p>We implement appropriate safeguards for international data transfers, including:</p>
 //             <ul>
@@ -471,9 +471,9 @@
 //               <FaChild aria-hidden="true" /> Children's Privacy
 //             </h2>
 //             <p>Our services are not directed to individuals under the age of 13 (or 16 in some jurisdictions). We do not knowingly collect personal information from children without parental consent.</p>
-            
+
 //             <p>If we become aware that we have collected personal information from a child without verification of parental consent, we take steps to remove that information from our servers.</p>
-            
+
 //             <div className="age-verification">
 //               <h3>Age Restrictions by Region</h3>
 //               <ul>
@@ -482,7 +482,7 @@
 //                 <li><strong>Other Regions:</strong> Varies by local laws and regulations</li>
 //               </ul>
 //             </div>
-            
+
 //             <p>Parents or guardians who believe their child has provided us with personal information can contact us to request deletion of such information.</p>
 //           </section>
 
@@ -497,9 +497,9 @@
 //               <FaExclamationTriangle aria-hidden="true" /> Policy Changes
 //             </h2>
 //             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
-            
+
 //             <p>We will let you know via email and/or a prominent notice on our service prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
-            
+
 //             <h3>Change History</h3>
 //             <div className="change-log">
 //               <div className="change-item">
@@ -512,7 +512,7 @@
 //                 <strong>October 1, 2024:</strong> Initial version of the privacy policy
 //               </div>
 //             </div>
-            
+
 //             <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 //           </section>
 
@@ -527,20 +527,20 @@
 //               <FaEnvelope aria-hidden="true" /> Contact Information
 //             </h2>
 //             <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            
+
 //             <div className="contact-methods">
 //               <div className="contact-method">
 //                 <FaEnvelope />
 //                 <h3>Email</h3>
 //                 <a href="mailto:privacy@riogram.com">privacy@riogram.com</a>
 //               </div>
-              
+
 //               <div className="contact-method">
 //                 <FaMobileAlt />
 //                 <h3>Phone</h3>
 //                 <p>+1 (800) 555-0199</p>
 //               </div>
-              
+
 //               <div className="contact-method">
 //                 <FaBuilding />
 //                 <h3>Mail</h3>
@@ -552,7 +552,7 @@
 //                 </address>
 //               </div>
 //             </div>
-            
+
 //             <h3>Data Protection Officer</h3>
 //             <p>For EU-specific inquiries, you may contact our Data Protection Officer at:</p>
 //             <a href="mailto:dpo@riogram.com">dpo@riogram.com</a>
@@ -643,7 +643,7 @@ const PrivacyPolicy = () => {
           <FaArrowLeft /> <span>Back to Home</span>
         </a>
       </header>
-      
+
       <div style={{
         display: 'flex',
         flexDirection: 'row',
@@ -652,7 +652,7 @@ const PrivacyPolicy = () => {
         padding: '0 16px',
         maxWidth: '1200px'
       }}>
-        <button 
+        <button
           style={{
             display: 'none',
             background: '#1a73e8',
@@ -677,7 +677,7 @@ const PrivacyPolicy = () => {
           {isMobileMenuOpen ? <FaChevronUp /> : <FaChevronDown />}
         </button>
 
-        <aside 
+        <aside
           style={{
             width: '260px',
             background: '#ffffff',
@@ -741,107 +741,71 @@ const PrivacyPolicy = () => {
           </nav>
         </aside>
 
-        <main style={{
-          flex: 1,
-          minWidth: 0,
-          maxWidth: '800px',
-          margin: '0 auto'
-        }} tabIndex={-1}>
-          <div style={{
-            textAlign: 'left',
-            marginBottom: '30px',
-            paddingBottom: '32px',
-            borderBottom: '2px solid #e6eaf0',
-            background: 'transparent'
-          }}>
-            <FaLock style={{
-              fontSize: '2.2rem',
-              color: '#1565c0',
-              verticalAlign: 'middle'
-            }} aria-hidden="true" />
-            <h1 style={{
-              fontSize: '2.3rem',
-              marginTop: '8px',
-              marginBottom: '8px',
-              color: '#1a1a1a'
-            }}>Privacy Policy</h1>
-            <p>Your privacy is our priority. Learn how we protect and handle your data.</p>
-            <p style={{
-              fontSize: '1rem',
-              color: '#999',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px'
+        <div style={{
+          background: '#fff',
+          borderRadius: '10px',
+          boxShadow: '0 1px 5px rgba(30, 64, 167, 0.05)',
+          padding: '28px 32px',
+          marginBottom: '28px',
+          marginTop: '50px',
+          animation: 'fadein 0.7s',
+          transition: 'box-shadow 0.3s'
+        }}>
+          <main style={{
+            flex: 1,
+            minWidth: 0,
+            maxWidth: '800px',
+            margin: '0 auto',
+            marginTop: '50px'
+          }} tabIndex={-1}>
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '30px',
+              paddingBottom: '32px',
+              borderBottom: '2px solid #e6eaf0',
+              background: 'transparent'
             }}>
-              <FaCalendar /> Last updated: August 1, 2025
-            </p>
-          </div>
-
-          <section
-            id="overview"
-            ref={el => (sectionRefs.current["overview"] = el)}
-            tabIndex={-1}
-            style={{
-              background: '#fff',
-              borderRadius: '10px',
-              boxShadow: '0 1px 5px rgba(30, 64, 167, 0.05)',
-              padding: '28px 32px',
-              marginBottom: '28px',
-              animation: 'fadein 0.7s',
-              transition: 'box-shadow 0.3s',
-              borderLeft: '5px solid #347ffc'
-            }}
-          >
-            <h2 style={{
-              fontSize: '1.5rem',
-              marginBottom: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: '#1a1a1a'
-            }}>
-              <FaFile aria-hidden="true" /> Overview
-            </h2>
-            <p style={{ marginBottom: '16px', color: '#444' }}>
-              At RioGram, we are committed to protecting your privacy and ensuring the security of your personal information.
-              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website,
-              use our services, or interact with us in any way.
-            </p>
-            <p style={{ marginBottom: '16px', color: '#444' }}>
-              By using our services, you consent to the data practices described in this policy.
-              We encourage you to read this policy carefully and contact us if you have any questions or concerns.
-            </p>
-          </section>
-
-          <section
-            id="info-collect"
-            ref={el => (sectionRefs.current["info-collect"] = el)}
-            tabIndex={-1}
-            style={{
-              background: '#fff',
-              borderRadius: '10px',
-              boxShadow: '0 1px 5px rgba(30, 64, 167, 0.05)',
-              padding: '28px 32px',
-              marginBottom: '28px',
-              animation: 'fadein 0.7s',
-              transition: 'box-shadow 0.3s'
-            }}
-          >
-            <button 
-              style={{
-                background: 'none',
-                border: 'none',
-                width: '100%',
-                textAlign: 'left',
-                padding: 0,
-                cursor: 'pointer',
+              <FaLock style={{
+                fontSize: '2.2rem',
+                color: '#1565c0',
+                verticalAlign: 'center'
+              }} aria-hidden="true" />
+              <h1 style={{
+                fontSize: '2.3rem',
+                marginTop: '8px',
+                marginBottom: '8px',
+                color: '#1a1a1a'
+              }}>Privacy Policy</h1>
+              <p>Your privacy is our priority. Learn how we protect and handle your data.</p>
+              <p style={{
+                fontSize: '1rem',
+                color: '#999',
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                {/* <FaCalendar  style={{textAlign: 'center',
+              marginBottom: '30px',
+              paddingBottom: '32px',
+              borderBottom: '2px solid #e6eaf0',
+              background: 'transparent'}} /> Last updated: August 1, 2025 */}
+              </p>
+            </div>
+
+            <section
+              id="overview"
+              ref={el => (sectionRefs.current["overview"] = el)}
+              tabIndex={-1}
+              style={{
+                background: '#fff',
+                borderRadius: '10px',
+                boxShadow: '0 1px 5px rgba(30, 64, 167, 0.05)',
+                padding: '28px 32px',
+                marginBottom: '28px',
+                animation: 'fadein 0.7s',
+                transition: 'box-shadow 0.3s',
+                borderLeft: '5px solid #347ffc'
               }}
-              onClick={() => toggleSection("info-collect")}
-              aria-expanded={expandedSections["info-collect"]}
-              aria-controls="info-collect-content"
             >
               <h2 style={{
                 fontSize: '1.5rem',
@@ -851,55 +815,243 @@ const PrivacyPolicy = () => {
                 gap: '8px',
                 color: '#1a1a1a'
               }}>
-                <FaUser aria-hidden="true" /> Information We Collect
+                <FaFile aria-hidden="true" /> Overview
               </h2>
-              {/* {expandedSections["info-collect"] ? <FaChevronUp /> : <FaChevronDown />} */}
-            </button>
-            
-            <div 
-              id="info-collect-content"
-              style={{
-                maxHeight: expandedSections["info-collect"] ? '2000px' : 0,
-                overflow: 'hidden',
-                transition: 'max-height 0.3s ease-out'
-              }}
+              <p style={{ marginBottom: '16px', color: '#444' }}>
+                At RioGram, we are committed to protecting your privacy and ensuring the security of your personal information.
+                This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website,
+                use our services, or interact with us in any way.
+              </p>
+              <p style={{ marginBottom: '16px', color: '#444' }}>
+                By using our services, you consent to the data practices described in this policy.
+                We encourage you to read this policy carefully and contact us if you have any questions or concerns.
+              </p>
+            </section>
+
+            <section
+              id="info-collect"
+              ref={el => (sectionRefs.current["info-collect"] = el)}
+              tabIndex={-1}
+            // style={{
+            //   background: '#fff',
+            //   borderRadius: '10px',
+            //   boxShadow: '0 1px 5px rgba(30, 64, 167, 0.05)',
+            //   padding: '28px 32px',
+            //   marginBottom: '28px',
+            //   animation: 'fadein 0.7s',
+            //   transition: 'box-shadow 0.3s'
+            // }}
             >
-              <h3 style={{
-                fontSize: '1.2rem',
-                marginTop: '20px',
-                marginBottom: '10px',
-                color: '#333'
-              }}>Personal Information</h3>
-              <p style={{ marginBottom: '16px', color: '#444' }}>We collect personal information that you voluntarily provide to us when you:</p>
-              <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Create an account or register for our services</li>
-                <li style={{ marginBottom: '8px' }}>Make a purchase or request a quote</li>
-                <li style={{ marginBottom: '8px' }}>Subscribe to our newsletter or marketing communications</li>
-                <li style={{ marginBottom: '8px' }}>Contact us through our website, email, or phone</li>
-                <li style={{ marginBottom: '8px' }}>Participate in surveys, contests, or promotional activities</li>
-                <li style={{ marginBottom: '8px' }}>Apply for employment opportunities</li>
-              </ul>
+              <button
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  width: '100%',
+                  textAlign: 'left',
+                  padding: 0,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}
+                onClick={() => toggleSection("info-collect")}
+                aria-expanded={expandedSections["info-collect"]}
+                aria-controls="info-collect-content"
+              >
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  marginBottom: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#1a1a1a'
+                }}>
+                  <FaUser aria-hidden="true" /> Information We Collect
+                </h2>
+                {/* {expandedSections["info-collect"] ? <FaChevronUp /> : <FaChevronDown />} */}
+              </button>
 
-              <h3 style={{
-                fontSize: '1.2rem',
-                marginTop: '20px',
-                marginBottom: '10px',
-                color: '#333'
-              }}>Automatically Collected Information</h3>
-              <p style={{ marginBottom: '16px', color: '#444' }}>When you access our services, we may automatically collect:</p>
-              <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-                <li style={{ marginBottom: '8px' }}>Device information (IP address, browser type, operating system)</li>
-                <li style={{ marginBottom: '8px' }}>Usage data (pages visited, time spent, clickstream data)</li>
-                <li style={{ marginBottom: '8px' }}>Location data (general geographic location based on IP)</li>
-                <li style={{ marginBottom: '8px' }}>Cookies and similar tracking technologies</li>
-              </ul>
-            </div>
-          </section>
+              <div
+                id="info-collect-content"
+                style={{
+                  maxHeight: expandedSections["info-collect"] ? '2000px' : 0,
+                  overflow: 'hidden',
+                  transition: 'max-height 0.3s ease-out'
+                }}
+              >
+                <div style={{ backgroundColor: '#fff', border: '1px solid #ddd', padding: '20px', borderRadius: '10px', marginBottom: '20px', maxWidth: '700px', margin: '20px auto', fontFamily: 'Arial, sans-serif' }}>
+                  <h3 style={{
+                    fontSize: '1.2rem',
+                    marginTop: '20px',
+                    marginBottom: '10px',
+                    color: '#333'
+                  }}>Personal Information</h3>
+                  <p style={{ marginBottom: '16px', color: '#444' }}>We collect personal information that you voluntarily provide to us when you:</p>
+                  <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+                    <li style={{ marginBottom: '8px' }}>Create an account or register for our services</li>
+                    <li style={{ marginBottom: '8px' }}>Make a purchase or request a quote</li>
+                    <li style={{ marginBottom: '8px' }}>Subscribe to our newsletter or marketing communications</li>
+                    <li style={{ marginBottom: '8px' }}>Contact us through our website, email, or phone</li>
+                    <li style={{ marginBottom: '8px' }}>Participate in surveys, contests, or promotional activities</li>
+                    <li style={{ marginBottom: '8px' }}>Apply for employment opportunities</li>
+                  </ul>
+                </div>
 
-          {/* Other sections would follow the same pattern */}
-          {/* I've shown the first two sections as examples - the rest would be converted similarly */}
+                <div style={{ border: '1px solid #ddd', borderRadius: '10px', padding: '20px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', maxWidth: '700px', margin: '20px auto', background: '#fff' }}>
+                  <div style={{ flex: 1, paddingRight: '30px' }}>
+                    <h2 style={{ color: '#111827', fontSize: '20px', marginBottom: '15px' }}>Types of Personal Data</h2>
+                    <h3 style={{ color: '#111827', fontSize: '16px', marginBottom: '8px' }}>Contact Information:</h3>
+                    <ul style={{ margin: 0, paddingLeft: '18px', color: '#374151', lineHeight: 1.6 }}>
+                      <li>Full name</li>
+                      <li>Email address</li>
+                      <li>Phone number</li>
+                      <li>Mailing address</li>
+                    </ul>
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ color: '#111827', fontSize: '16px', marginBottom: '8px', marginTop: '50px' }}>Professional Information:</h3>
+                    <ul style={{ margin: 0, paddingLeft: '18px', color: '#374151', lineHeight: 1.6 }}>
+                      <li>Company name</li>
+                      <li>Job title</li>
+                      <li>Industry</li>
+                      <li>Business requirements</li>
+                    </ul>
+                  </div>
+                </div>
 
-        </main>
+
+
+
+                <div style={{ backgroundColor: '#fff', border: '1px solid #ddd', padding: '20px', borderRadius: '10px', marginBottom: '20px', maxWidth: '700px', margin: '20px auto', fontFamily: 'Arial, sans-serif' }}>
+                  <h3 style={{
+                    fontSize: '1.2rem',
+                    marginTop: '20px',
+                    marginBottom: '10px',
+                    color: '#333'
+                  }}>Automatically Collected Information</h3>
+                  <p style={{ marginBottom: '16px', color: '#444' }}>When you access our services, we may automatically collect:</p>
+                  <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+                    <li style={{ marginBottom: '8px' }}>Device information (IP address, browser type, operating system)</li>
+                    <li style={{ marginBottom: '8px' }}>Usage data (pages visited, time spent, clickstream data)</li>
+                    <li style={{ marginBottom: '8px' }}>Location data (general geographic location based on IP)</li>
+                    <li style={{ marginBottom: '8px' }}>Cookies and similar tracking technologies</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section style={{
+              fontFamily: "Arial, sans-serif",
+              maxWidth: "900px",
+              margin: "auto",
+              padding: "20px"
+            }}>
+              <h2 style={{ fontSize: "1.8rem", marginBottom: "10px" }}>👤 How We Use Your Information</h2>
+              <div style={{
+                background: "#e8f9f0",
+                padding: "15px",
+                borderRadius: "8px",
+                marginBottom: "20px",
+                fontSize: "1rem"
+              }}>
+                <p>
+                  We use the information we collect for legitimate business purposes,
+                  including:
+                </p>
+              </div>
+
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                gap: "15px"
+              }}>
+                <div style={{
+                  background: "white",
+                  borderRadius: "8px",
+                  padding: "15px",
+                  border: "1px solid #eee",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+                }}>
+                  <h3 style={{ marginBottom: "10px", fontSize: "1.1rem" }}>⚡ Service Delivery</h3>
+                  <ul style={{
+                    paddingLeft: "20px",
+                    listStyleType: "disc",
+                    margin: "0"
+                  }}>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Provide and maintain our services</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Process transactions and payments</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Deliver customer support</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Send service-related notifications</li>
+                  </ul>
+                </div>
+
+                <div style={{
+                  background: "white",
+                  borderRadius: "8px",
+                  padding: "15px",
+                  border: "1px solid #eee",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+                }}>
+                  <h3 style={{ marginBottom: "10px", fontSize: "1.1rem" }}>📧 Communication</h3>
+                  <ul style={{
+                    paddingLeft: "20px",
+                    listStyleType: "disc",
+                    margin: "0"
+                  }}>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Respond to inquiries and requests</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Send marketing communications</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Provide updates and announcements</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Conduct surveys and feedback collection</li>
+                  </ul>
+                </div>
+
+                <div style={{
+                  background: "white",
+                  borderRadius: "8px",
+                  padding: "15px",
+                  border: "1px solid #eee",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+                }}>
+                  <h3 style={{ marginBottom: "10px", fontSize: "1.1rem" }}>📈 Business Operations</h3>
+                  <ul style={{
+                    paddingLeft: "20px",
+                    listStyleType: "disc",
+                    margin: "0"
+                  }}>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Analyze usage patterns and trends</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Improve our products and services</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Conduct research and development</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Manage business relationships</li>
+                  </ul>
+                </div>
+
+                <div style={{
+                  background: "white",
+                  borderRadius: "8px",
+                  padding: "15px",
+                  border: "1px solid #eee",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+                }}>
+                  <h3 style={{ marginBottom: "10px", fontSize: "1.1rem" }}>🛡️ Legal & Security</h3>
+                  <ul style={{
+                    paddingLeft: "20px",
+                    listStyleType: "disc",
+                    margin: "0"
+                  }}>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Comply with legal obligations</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Prevent fraud and abuse</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Protect our rights and property</li>
+                    <li style={{ marginBottom: "5px", fontSize: "0.95rem" }}>Ensure platform security</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Other sections would follow the same pattern */}
+            {/* I've shown the first two sections as examples - the rest would be converted similarly */}
+
+          </main>
+        </div>
       </div>
     </div>
   );
