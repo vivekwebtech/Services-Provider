@@ -43,7 +43,7 @@ const Timeline = () => {
         <div className="timeline-badge">
           <FontAwesomeIcon icon={faCalendarDays} /> RioGram's Evolution
         </div>
-        <h2>Milestones That Define <br /><span>RioGram's <span className="highlight">Success Story</span></span></h2>
+        <h2 style={{color: '#1c91a8'}}>Milestones That Define <br /><span>RioGram's <span className="highlight">Success Story</span></span></h2>
         <p>Every transformative journey is marked by pivotal moments. Here are the key milestones that shaped RioGram's evolution into a global digital innovation leader.</p>
       </div>
 

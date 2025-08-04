@@ -45,9 +45,9 @@ body {
 
 .menu {
   display: flex;
-  gap: 20px;
+  /* gap: -20px; */
   align-items: center;
-  margin-right: 60px;
+  margin-right: -630px;
 }
 
 .menu a.nav_1:hover,
