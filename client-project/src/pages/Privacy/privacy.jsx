@@ -564,6 +564,7 @@
 // };
 
 // export default PrivacyPolicy;
+
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import {
   FaArrowLeft, FaFile, FaUser, FaUserShield, FaShareAlt, FaLock, FaGlobe,

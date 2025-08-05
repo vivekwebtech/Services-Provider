@@ -62,7 +62,7 @@
       margin: auto;
       padding: 40px 20px;
       text-align: center;
-      height: 600px;
+      height: 800px;
       background-color: #ffffff;
       border-radius: 16px;
     }
@@ -135,12 +135,27 @@
       border-radius: 20px;
       font-weight: 600;
     }
+    .plan-title{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+      color:black
+    }
+    .plan-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+      text-align: center;
+      color:rgb(150, 145, 145);
+    }
 
     .plan-title-card {
       font-size: 20px;
       font-weight: 700;
       margin-bottom: 4px;
       text-align: center;
+      /* color:black; */
     }
 
     .plan-subtitle {

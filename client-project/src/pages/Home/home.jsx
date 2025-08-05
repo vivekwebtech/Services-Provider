@@ -15,7 +15,7 @@ const MainContent = () => {
         {/* CARDS SECTION */}
         <div className="cards1">
           <div className="card1">
-            <h2>Our Services</h2>
+            <h2 style={{ textAlign: "center" }}>Our Services</h2>
             <p>
               We offer comprehensive digital solutions including web
               development, mobile apps, digital marketing, cloud solutions, and
