@@ -471,6 +471,8 @@ import {
   FaComments,
   FaMapMarker,
   FaLink,
+  FaChevronUp,
+  FaChevronDown
 } from "react-icons/fa";
 
 const ContactUs = () => {
@@ -792,34 +794,35 @@ const ContactUs = () => {
           {/* Contact Cards */}
           <div className="contact-cardcol">
             <ContactCard
-              icon={<FaPhone />}
+              icon={<FaPhone style={{ color: blue }} />}
               title="Phone"
               content="+1 (555) 123-4567"
               sub="Mon–Fri 8am–6pm EST"
               borderRadius={borderRadius}
             />
+
             <ContactCard
-              icon={<FaEnvelope />}
+              icon={<FaEnvelope style={{ color: blue }} />}
               title="Email"
               content="help@company.com"
               sub="We respond within 24 hours"
               borderRadius={borderRadius}
             />
             <ContactCard
-              icon={<FaComments />}
+              icon={<FaComments style={{ color: blue }} />}
               title="Live Chat"
               content="Available during business hours"
               borderRadius={borderRadius}
             />
             <ContactCard
-              icon={<FaMapMarker />}
+              icon={<FaMapMarker style={{ color: blue }} />}
               title="Visit Our Office"
               content="123 Business Ave, NY 10001"
               button="Get Directions"
               borderRadius={borderRadius}
             />
             <ContactCard
-              icon={<FaLink />}
+              icon={<FaLink style={{ color: blue }} />}
               title="Follow Us"
               social
               borderRadius={borderRadius}
@@ -857,55 +860,72 @@ const ContactUs = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section style={{ padding: "60px 20px", backgroundColor: "#f0f2f5" }}>
-        <h2 style={{ textAlign: "center", fontSize: "2rem", color: "#111827", marginBottom: "15px" }}>
-          Frequently Asked Questions
-        </h2>
-        <h4 style={{ textAlign: "center", fontSize: "1rem", color: "#4B5563", margin: "0 auto 30px", maxWidth: "700px" }}>
-          Quick answers to common questions
-        </h4>
-        {[
-          ["What's the best way to reach you?", "For urgent matters, call us at +1 (555) 123-4567. Otherwise, use the contact form or email and we'll respond as soon as possible."],
-          ["Do you offer phone support?", "Yes! Our phone support is available Mon–Fri 8am–6pm EST. For quick questions, try our live chat too."],
-          ["How quickly do you respond to emails?", "We aim to respond to all emails within 24 hours (usually much faster during business hours)."],
-          ["Can I schedule a meeting or demo?", "Absolutely! Use our form and select 'Sales & Partnerships' or email us at help@company.com to arrange a time."],
-          ["Do you provide technical support?", "Yes, we offer comprehensive technical support for all our products and services."]
+     {/* FAQ SECTION */}
+<section style={{ padding: "60px 20px", backgroundColor: "#f0f2f5" }}>
+  <h2 style={{ textAlign: "center", fontSize: "2rem", color: "#111827", marginBottom: "15px" }}>
+    Frequently Asked Questions
+  </h2>
+  <h4 style={{ textAlign: "center", fontSize: "1rem", color: "#4B5563", margin: "0 auto 30px", maxWidth: "700px" }}>
+    Quick answers to common questions
+  </h4>
 
-        ].map(([q, a], i) => (
-          <div
-            key={i}
-            style={{
-              maxWidth: "800px",
-              margin: "0 auto 20px",
-              backgroundColor: "#ffffff",
-              padding: "20px",
-              borderRadius,
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-              transition: "transform 0.2s",
-              transform: activeFaq === i ? "translateY(-4px)" : "none"
-            }}
-          >
-            <div
-              className="faq-q"
-              tabIndex={0}
-              role="button"
-              aria-expanded={activeFaq === i}
-              aria-controls={`faq-a${i}`}
-              onClick={() => toggleFaq(i)}
-              onKeyDown={e => (e.key === "Enter" ? toggleFaq(i) : undefined)}
-              style={{ border: "none", background: "none" }}
-            >
-              {q}
-              <span aria-hidden="true">&#8964;</span>
-            </div>
-            {activeFaq === i && (
-              <div id={`faq-a${i}`} style={{ paddingTop: 10, color: gray, fontSize: "0.95rem" }}>
-                {a}
-              </div>
-            )}
-          </div>
-        ))}
-      </section>
+  {[
+    ["What's the best way to reach you?", "For urgent matters, call us at +1 (555) 123-4567. Otherwise, use the contact form or email and we'll respond as soon as possible."],
+    ["Do you offer phone support?", "Yes! Our phone support is available Mon–Fri 8am–6pm EST. For quick questions, try our live chat too."],
+    ["How quickly do you respond to emails?", "We aim to respond to all emails within 24 hours (usually much faster during business hours)."],
+    ["Can I schedule a meeting or demo?", "Absolutely! Use our form and select 'Sales & Partnerships' or email us at help@company.com to arrange a time."],
+    ["Do you provide technical support?", "Yes, we offer comprehensive technical support for all our products and services."]
+  ].map(([q, a], i) => (
+    <div
+      key={i}
+      style={{
+        maxWidth: "800px",
+        margin: "0 auto 20px",
+        backgroundColor: "#ffffff",
+        padding: "20px",
+        borderRadius,
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+        transition: "transform 0.2s",
+        transform: activeFaq === i ? "translateY(-4px)" : "none"
+      }}
+    >
+      <div
+        className="faq-q"
+        tabIndex={0}
+        role="button"
+        aria-expanded={activeFaq === i}
+        aria-controls={`faq-a${i}`}
+        onClick={() => toggleFaq(i)}
+        onKeyDown={e => (e.key === "Enter" ? toggleFaq(i) : undefined)}
+        style={{
+          border: "none",
+          background: "none",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        {q}
+        {/* Dynamic Up/Down Icon */}
+        {activeFaq === i ? (
+          <FaChevronUp style={{ color: "#2836cc" }} />
+        ) : (
+          <FaChevronDown style={{ color: "#2836cc" }} />
+        )}
+      </div>
+
+      {activeFaq === i && (
+        <div
+          id={`faq-a${i}`}
+          style={{ paddingTop: 10, color: gray, fontSize: "0.95rem" }}
+        >
+          {a}
+        </div>
+      )}
+    </div>
+  ))}
+</section>
+
 
       {/* FOOTER */}
       <div
@@ -945,7 +965,10 @@ const ContactUs = () => {
                 color: "white",
                 border: "none",
                 fontWeight: "bold",
-                textDecoration: "none"
+                textDecoration: "none",
+                // ":hover": {
+                //   backgroundColor: "darken(blue, 5)"
+                // }
               }}
             >
               Email Us
@@ -959,7 +982,10 @@ const ContactUs = () => {
                 color: blue,
                 backgroundColor: "white",
                 fontWeight: "bold",
-                textDecoration: "none"
+                textDecoration: "none",
+                // ":hover": {
+                //   backgroundColor: 'red'
+                // }
               }}
             >
               Call Now

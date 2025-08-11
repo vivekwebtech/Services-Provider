@@ -1777,6 +1777,7 @@ const PrivacyPolicy = () => {
                     <h3 style={{
                       fontSize: '1.1rem',
                       marginBottom: '8px',
+                      marginTop: '-90px',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
