@@ -14,6 +14,58 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const RioGramServices = () => {
+  // Team member data with Unsplash image URLs
+  const teamMembers = [
+    {
+      name: 'Sarah Johnson',
+      position: 'Chief Executive Officer',
+      description: 'With over 15 years of experience in technology leadership, Sarah drives RioGram\'s vision for innovation and sustainable growth in the digital landscape.',
+      expertise: ['Strategic Planning', 'Digital Transformation', 'Team Leadership'],
+      stats: 'Led 200+ successful digital transformations',
+      imgSrc: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80'
+    },
+    {
+      name: 'Michael Chen',
+      position: 'Chief Technology Officer',
+      description: 'Michael spearheads RioGram\'s technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.',
+      expertise: ['Cloud Architecture', 'AI/ML Solutions', 'DevOps Excellence'],
+      stats: 'Architected systems serving 10M+ users',
+      imgSrc: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    },
+    {
+      name: 'David Wilson',
+      position: 'Lead Software Architect',
+      description: 'David designs robust, scalable systems that form the foundation of RioGram\'s most complex and high-performance applications.',
+      expertise: ['System Design', 'Scalability', 'Performance Optimization'],
+      stats: 'Designed 50+ enterprise systems',
+      imgSrc: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+    },
+    {
+      name: 'Jessica Martinez',
+      position: 'UX Research Director',
+      description: 'Jessica leads user research initiatives that inform product design decisions and ensure exceptional user experiences across all RioGram projects.',
+      expertise: ['User Research', 'Usability Testing', 'Data Analysis'],
+      stats: 'Conducted 1000+ user interviews',
+      imgSrc: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80'
+    },
+    {
+      name: 'Robert Kim',
+      position: 'DevOps Engineering Lead',
+      description: 'Robert builds and maintains the infrastructure that powers RioGram\'s applications, ensuring reliability, security, and scalability.',
+      expertise: ['Infrastructure', 'CI/CD', 'Cloud Security'],
+      stats: 'Managed infrastructure for 500+ deployments',
+      imgSrc: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80'
+    },
+    {
+      name: 'Emily Rodriguez',
+      position: 'Head of Creative Design',
+      description: 'Emily transforms complex ideas into stunning visual experiences, leading RioGram\'s award-winning design team with creativity and strategic insight.',
+      expertise: ['UX/UI Design', 'Brand Strategy', 'Design Systems'],
+      stats: 'Winner of 15+ international design awards',
+      imgSrc: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80'
+    }
+  ];
+
   return (
     <div style={{
       fontFamily: "'Inter', sans-serif",
@@ -158,7 +210,7 @@ const RioGramServices = () => {
               <li style={{
                 fontSize: '15px',
                 marginBottom: '10px',
-                color: '#d1d5db',
+                color: '##d1d5db',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -684,8 +736,8 @@ const RioGramServices = () => {
         backgroundColor: '#f9fafb',
         fontFamily: "'Segoe UI', sans-serif"
       }}>
-        {/* Team Member Cards */}
-        {[1, 2, 3, 4, 5, 6].map((_, index) => (
+        {/* Team Member Cards with individual images from Unsplash */}
+        {teamMembers.map((member, index) => (
           <div key={index} style={{
             background: '#ffffff',
             borderRadius: '20px',
@@ -703,9 +755,9 @@ const RioGramServices = () => {
               width: '100%',
               overflow: 'hidden'
             }}>
-              <img 
-                src="../Screenshot 2025-07-03 182345.png" 
-                alt="Team Member" 
+              <img
+                src={member.imgSrc}
+                alt={member.name}
                 style={{
                   width: '100%',
                   height: '350px',
@@ -717,10 +769,14 @@ const RioGramServices = () => {
                     opacity: '0.7',
                     transform: 'scale(0.95)'
                   }
-                }} 
+                }}
+                onError={(e) => {
+                  // Fallback image if the Unsplash image fails to load
+                  e.target.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80';
+                }}
               />
-              <FontAwesomeIcon 
-                icon={faCamera} 
+              <FontAwesomeIcon
+                icon={faCamera}
                 style={{
                   position: 'absolute',
                   right: '15px',
@@ -731,7 +787,7 @@ const RioGramServices = () => {
                   borderRadius: '50%',
                   fontSize: '16px',
                   zIndex: 2
-                }} 
+                }}
               />
             </div>
             <div style={{ padding: '20px' }}>
@@ -739,27 +795,25 @@ const RioGramServices = () => {
                 fontSize: '20px',
                 margin: '10px 0 5px',
                 fontWeight: '700',
-                color: index % 2 === 0 ? '#0ea5e9' : 'inherit'
+                color: '#12bc3fff',
+                // color: index % 2 === 0 ? '#e90e0eff' : 'inherit'
               }}>
-                {index === 0 ? 'Sarah Johnson' : 
-                 index === 5 ? 'Emily Rodriguez' : 'Michael Chen'}
+                {member.name}
               </h3>
               <p style={{
-                color: '#0284c7',
+                color: '#4d02c7ff',
                 fontWeight: '600',
                 fontSize: '15px',
                 marginBottom: '15px'
               }}>
-                {index === 0 ? 'Chief Executive Officer' : 
-                 index === 5 ? 'Head of Creative Design' : 'Chief Technology Officer'}
+                {member.position}
               </p>
               <p style={{
                 fontSize: '15px',
                 color: '#475569',
                 lineHeight: '1.6'
               }}>
-                {index === 0 ? 'With over 15 years of experience in technology leadership, Sarah drives RioGram\'s vision for innovation and sustainable growth in the digital landscape.' : 
-                 index === 5 ? 'Emily transforms complex ideas into stunning visual experiences, leading RioGram\'s award-winning design team with creativity and strategic insight.' : 'Michael spearheads RioGram\'s technical strategy, ensuring we remain at the cutting edge of emerging technologies and architectural excellence.'}
+                {member.description}
               </p>
               <div style={{
                 fontWeight: '600',
@@ -772,88 +826,18 @@ const RioGramServices = () => {
                 flexWrap: 'wrap',
                 gap: '8px'
               }}>
-                {index === 0 ? (
-                  <>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Strategic Planning</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Digital Transformation</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Team Leadership</span>
-                  </>
-                ) : index === 5 ? (
-                  <>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>UX/UI Design</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Brand Strategy</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Design Systems</span>
-                  </>
-                ) : (
-                  <>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>Cloud Architecture</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>AI/ML Solutions</span>
-                    <span style={{
-                      background: '#e0f2fe',
-                      color: '#0369a1',
-                      padding: '6px 12px',
-                      borderRadius: '999px',
-                      fontSize: '13px',
-                      fontWeight: '500'
-                    }}>DevOps Excellence</span>
-                  </>
-                )}
+                {member.expertise.map((skill, i) => (
+                  <span key={i} style={{
+                    background: '#e0f2fe',
+                    color: '#0369a1',
+                    padding: '6px 12px',
+                    borderRadius: '999px',
+                    fontSize: '13px',
+                    fontWeight: '500'
+                  }}>
+                    {skill}
+                  </span>
+                ))}
               </div>
               <div style={{
                 marginTop: '20px',
@@ -862,8 +846,7 @@ const RioGramServices = () => {
                 borderTop: '1px solid #e2e8f0',
                 paddingTop: '15px'
               }}>
-                {index === 0 ? 'Led 200+ successful digital transformations' : 
-                 index === 5 ? 'Winner of 15+ international design awards' : 'Architected systems serving 10M+ users'}
+                {member.stats}
               </div>
             </div>
           </div>
